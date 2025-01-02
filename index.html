@@ -13,6 +13,7 @@
             margin: 0;
             padding: 0;
             background-color: #000000; /* Màu nền trang */
+            color: white; /* Đổi toàn bộ chữ thành màu trắng */
         }
 
         header {
@@ -86,20 +87,19 @@
         /* Phần Playlist */
         .playlist-container {
             display: flex;
-            justify-content: space-around; /* Căn đều các Playlist */
+            justify-content: center;
             margin-top: 30px;
             width: 100%;
-            height: 400px;
             position: relative;
             flex-wrap: wrap;
         }
 
         .playlist-container li {
             position: relative;
-            width: 45%;
-            height: 45%;
+            width: 45%; /* Đảm bảo mỗi playlist có cùng chiều rộng */
+            height: 100%;
             background-color: #E4F991;
-            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+            clip-path: none; /* Loại bỏ hiệu ứng hình thoi */
             border-radius: 12px;
             overflow: hidden;
             margin: 10px;
@@ -133,12 +133,10 @@
             margin-top: 30px;
             color: white;
             font-size: 14px;
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            background-color: rgba(0, 0, 0, 0.7);
+            position: relative;
             padding: 10px;
             border-radius: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
         }
 
         .profile-view p {
@@ -199,10 +197,10 @@
         <p>Follow me on:</p>
         <div class="icon-container">
             <a href="https://www.youtube.com/@nemnuong" target="_blank">
-                <img src="images/youtube.jpg" alt="YouTube Icon"> YouTube
+                <img src="images/Youtube.png" alt="YouTube Icon"> YouTube
             </a>
             <a href="https://open.spotify.com/user/31njaguxvody6xit6gajvngzhhe4?si=55bdc1bfb41c4cf0" target="_blank">
-                <img src="images/spotify.jpg" alt="Spotify Icon"> Spotify
+                <img src="images/Spotify.png" alt="Spotify Icon"> Spotify
             </a>
             <a href="https://discord.gg/2zrethSUr9" target="_blank">
                 <img src="images/discord.jpg" alt="Discord Icon"> Discord Server
@@ -216,7 +214,7 @@
         <p>Follow me on:</p>
         <div class="icon-container">
             <a href="https://tracker.gg/valorant/profile/riot/Hatsune%20Miku%23nem/overview" target="_blank">
-                <img src="images/valorant.jpg" alt="Valorant Icon"> Valorant Stats
+                <img src="images/Valorant.png" alt="Valorant Icon"> Valorant Stats
             </a>
             <a href="https://tracker.gg/tft/profile/riot/Hatsune%20Miku%23nem/overview" target="_blank">
                 <img src="images/tft.jpg" alt="TFT Icon"> Teamfight Tactics Stats
