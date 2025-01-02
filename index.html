@@ -57,12 +57,67 @@
     </header>
 
     <section>
-        <h2>Riot Games</h2>
-        <ul>
-            <li><a href="https://tracker.gg/valorant/profile/riot/Hatsune%20Miku%23nem/overview" target="_blank">Valorant Stats</a></li>
-            <li><a href="https://tracker.gg/tft/profile/riot/Hatsune%20Miku%23nem/overview" target="_blank">Teamfight Tactics Stats</a></li>
-        </ul>
-    </section>
+    <h2>Riot Games Stats</h2>
+    <ul>
+        <li class="riot-stats-item">
+            <a href="https://tracker.gg/valorant/profile/riot/Hatsune%20Miku%23nem/overview" target="_blank">
+                <i class="fab fa-valorant"></i> <!-- Biểu tượng cho Valorant -->
+                Valorant Stats
+            </a>
+        </li>
+        <li class="riot-stats-item">
+            <a href="https://tracker.gg/tft/profile/riot/Hatsune%20Miku%23nem/overview" target="_blank">
+                <i class="fab fa-tft"></i> <!-- Biểu tượng cho TFT -->
+                Teamfight Tactics Stats
+            </a>
+        </li>
+    </ul>
+</section>
+<style>
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+        text-align: center; /* Căn giữa danh sách */
+    }
+
+    li {
+        margin-bottom: 15px; /* Khoảng cách giữa các mục */
+    }
+
+    li a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        font-size: 18px;
+        color: #333; /* Màu chữ mặc định */
+        font-weight: bold;
+        transition: all 0.3s ease; /* Hiệu ứng chuyển đổi */
+    }
+
+    li a i {
+        margin-right: 10px; /* Khoảng cách giữa biểu tượng và văn bản */
+        font-size: 24px; /* Kích thước biểu tượng */
+    }
+
+    /* Thêm hiệu ứng hover */
+    li a:hover {
+        color: #ff6347; /* Màu chữ khi hover */
+        transform: translateY(-5px); /* Di chuyển nhẹ khi hover */
+    }
+
+    li a:hover i {
+        color: #ff6347; /* Thay đổi màu của biểu tượng khi hover */
+    }
+</style>
+
+<!-- Thêm Font Awesome CDN để hiển thị biểu tượng -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <section>
         <h2>My Favorite Music PlayList</h2>
