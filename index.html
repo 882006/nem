@@ -23,8 +23,8 @@
         header img {
             border-radius: 50%;
             margin-top: 10px;
-            width: 5cm; /* Giảm đi 2cm */
-            height: 5cm; /* Giảm đi 2cm */
+            width: 5cm;
+            height: 5cm;
             object-fit: cover;
             transition: opacity 0.3s ease;
         }
@@ -37,7 +37,7 @@
         .username {
             margin-top: 10px;
             font-size: 24px;
-            font-weight: bold; /* Tên Nem lớn hơn */
+            font-weight: bold;
         }
 
         header p {
@@ -64,7 +64,7 @@
             width: 175px;
             height: 175px;
             background-color: rgba(128, 128, 128, 0.5);
-            border-radius: 15%; /* Viền vuông tròn */
+            border-radius: 15%;
             overflow: hidden;
             transition: transform 0.3s ease, background-color 0.3s ease;
         }
@@ -72,7 +72,7 @@
         .icon-container a img {
             width: 100%;
             height: auto;
-            border-radius: 50%; /* Hình ảnh là hình tròn */
+            border-radius: 50%;
         }
 
         .icon-container a:hover {
@@ -90,8 +90,8 @@
 
         .playlist-container li {
             position: relative;
-            width: 480px; /* Tăng thêm 8cm */
-            height: 280px; /* Tăng thêm 8cm */
+            width: 480px;
+            height: 280px;
             background-color: rgba(128, 128, 128, 0.5);
             border-radius: 12px;
             overflow: hidden;
@@ -123,6 +123,12 @@
             font-size: 12px;
         }
 
+        footer #view-count {
+            font-size: 14px;
+            margin-top: 10px;
+            font-weight: normal;
+        }
+
         @media (max-width: 768px) {
             .icon-container {
                 flex-direction: column;
@@ -145,7 +151,7 @@
 <body>
     <header>
         <img src="images/chosocoolface.jpg" alt="Profile Picture">
-        <p class="username">Nem</p> <!-- Tên Nem to hơn, ở dưới ảnh -->
+        <p class="username">Nem</p>
         <p>Here, you'll find my links: YouTube, Spotify, Discord Server</p>
     </header>
 
@@ -201,6 +207,7 @@
 
     <footer>
         <p>© 2025 by Nem. Created with GitHub Pages.</p>
+        <p id="view-count">Page views: 0</p>
     </footer>
 
     <script>
@@ -210,7 +217,7 @@
         }
         viewCount++;
         localStorage.setItem('view-count', viewCount);
-        document.getElementById('view-count').textContent = viewCount;
+        document.getElementById('view-count').textContent = `Page views: ${viewCount}`;
     </script>
 </body>
 </html>
