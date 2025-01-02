@@ -23,8 +23,8 @@
         header img {
             border-radius: 50%;
             margin-top: 10px;
-            width: 5cm; /* Increased by 2cm */
-            height: 5cm; /* Increased by 2cm */
+            width: 6cm; /* Increased by 1cm (total of 5cm increase) */
+            height: 6cm; /* Increased by 1cm (total of 5cm increase) */
             object-fit: cover;
             transition: opacity 0.3s ease;
         }
@@ -36,17 +36,17 @@
 
         .username {
             margin-top: 10px;
-            font-size: 24px;
+            font-size: 30px; /* Increased size to 30px */
             font-weight: bold;
         }
 
         header p {
             margin-top: 5px;
-            font-size: 22px; /* Increased size to 22px */
+            font-size: 16px; /* Changed to 16px */
         }
 
         .welcome-message {
-            font-size: 22px; /* Increased size to 22px */
+            font-size: 26px; /* Increased size to 26px */
             font-weight: bold;
             margin-top: 1cm; /* Positioned above the profile image */
         }
@@ -132,14 +132,8 @@
             padding: 10px;
             text-align: center;
             font-weight: bold;
-            font-size: 12px;
+            font-size: 10px; /* Changed to 10px */
             position: relative;
-        }
-
-        footer #view-count {
-            font-size: 14px;
-            margin-top: 10px;
-            font-weight: normal;
         }
 
         .profile-review {
@@ -149,8 +143,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 3cm; /* Reduced size */
-            height: 3cm; /* Reduced size */
+            width: 4cm; /* Adjusted size */
+            height: 4cm; /* Adjusted size */
             background-color: rgba(128, 128, 128, 0.5);
             border-radius: 15%;
             font-size: 14px;
@@ -245,9 +239,8 @@
     </footer>
 
     <div class="profile-review">
-        <i class="fa-solid fa-eye"></i> Profile Review
+        <i class="fa-solid fa-eye"></i> Page Review: <span id="view-count">0</span>
     </div>
-    <p id="view-count">Page views: 0</p>
 
     <script>
         let viewCount = localStorage.getItem('view-count');
@@ -256,9 +249,8 @@
         }
         viewCount++;
         localStorage.setItem('view-count', viewCount);
-        document.getElementById('view-count').textContent = `Page views: ${viewCount}`;
+        document.getElementById('view-count').textContent = `${viewCount}`;
     </script>
 </body>
 </html>
-
 
