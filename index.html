@@ -28,26 +28,35 @@
             <li><a href="https://tracker.gg/tft/profile/riot/Hatsune%20Miku%23nem/overview" target="_blank">Teamfight Tactics Stats</a></li>
     <section>
     <section>
-        <h2>My Favorite Music PlayList</h2>     
-       <style>
-  .iframe-container {
-    display: flex; /* Căn chỉnh ngang với flexbox */
-    justify-content: flex-start; /* Căn trái các iframe */
-  }
+  <h2>My Favorite Music PlayList</h2>
+  
+  <style>
+    h2 {
+      text-align: center; /* Căn giữa tiêu đề */
+      margin-bottom: 20px; /* Khoảng cách dưới tiêu đề */
+    }
 
-  .iframe-container iframe {
-    width: 300px; /* Chiều rộng của iframe */
-    height: 300px; /* Chiều cao bằng chiều rộng để tạo hình vuông */
-    border-radius: 12px; /* Bo góc iframe */
-    margin-right: 0; /* Đảm bảo không có khoảng cách bên phải */
-  }
-</style>
+    .iframe-container {
+      display: flex; /* Căn chỉnh ngang với flexbox */
+      justify-content: center; /* Căn giữa các iframe */
+      gap: 20px; /* Khoảng cách giữa các iframe */
+      max-width: 100%; /* Đảm bảo container không vượt quá chiều rộng của màn hình */
+      margin: 0 auto; /* Căn giữa container */
+    }
 
-<div class="iframe-container">
-  <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1E4xTpGY9MLJPI?utm_source=generator" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-  <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/0bTfvPdUr2wALFcCshXXqd?utm_source=generator" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-</div>
-    </section>
+    .iframe-container iframe {
+      width: 45%; /* Chiều rộng iframe chiếm 45% chiều rộng của container */
+      height: 300px; /* Chiều cao bằng chiều rộng để tạo hình vuông */
+      border-radius: 12px; /* Bo góc iframe */
+      margin-right: 0; /* Đảm bảo không có khoảng cách bên phải */
+    }
+  </style>
+
+  <div class="iframe-container">
+    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1E4xTpGY9MLJPI?utm_source=generator" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/0bTfvPdUr2wALFcCshXXqd?utm_source=generator" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  </div>
+</section>
     <footer>
         <p>© 2025 by Nem. Created with GitHub Pages.</p>
     </footer>
