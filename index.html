@@ -23,8 +23,8 @@
         header img {
             border-radius: 50%;
             margin-top: 10px;
-            width: 4cm; /* Đã giảm 3cm */
-            height: 4cm; /* Đã giảm 3cm */
+            width: 3cm; /* Reduced by 5cm */
+            height: 3cm; /* Reduced by 5cm */
             object-fit: cover;
             transition: opacity 0.3s ease;
         }
@@ -46,9 +46,9 @@
         }
 
         .welcome-message {
-            font-size: 14px; /* Cỡ chữ 14 */
+            font-size: 18px; /* Increased size */
             font-weight: bold;
-            margin-top: 1cm; /* Cách dưới 1cm */
+            margin-top: 1cm; /* Positioned above the profile image */
         }
 
         .icon-container {
@@ -96,8 +96,8 @@
 
         .playlist-container li {
             position: relative;
-            width: 420px; /* Điều chỉnh để vừa với hình chữ nhật tròn */
-            height: 240px; /* Điều chỉnh */
+            width: 500px; /* Increased to fit the rounded rectangle */
+            height: 300px; /* Increased to fit */
             background-color: rgba(128, 128, 128, 0.5);
             border-radius: 12px;
             overflow: hidden;
@@ -178,10 +178,10 @@
 </head>
 <body>
     <header>
+        <p class="welcome-message">Hello <3 Welcome to Nem Profile</p>
         <img src="images/chosocoolface.jpg" alt="Profile Picture">
         <p class="username">Nem</p>
         <p>Here, you'll find my links: YouTube, Spotify, Discord Server</p>
-        <p class="welcome-message">Hello <3 Welcome to Nem Profile</p>
     </header>
 
     <section>
@@ -236,10 +236,10 @@
 
     <footer>
         <p>© 2025 by Nem. Created with GitHub Pages.</p>
-        <p id="view-count">Page views: 0</p>
         <div class="profile-review">
             <i class="fa-solid fa-eye"></i> Profile View Count
         </div>
+        <p id="view-count">Page views: 0</p>
     </footer>
 
     <script>
@@ -253,4 +253,5 @@
     </script>
 </body>
 </html>
+
 
