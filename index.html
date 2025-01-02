@@ -81,7 +81,6 @@
             margin-bottom: 20px;
         }
 
-        /* Cập nhật cho các iframe để có thể vừa vặn và dễ nhìn */
         .iframe-container {
             display: flex;
             justify-content: space-around;
@@ -131,9 +130,53 @@
             border-radius: 12px;
         }
 
+        /* Phần chạy nhạc nền */
+        audio {
+            display: none;
+        }
+
+        /* Thêm phần hình thoi cho playlist yêu thích */
+        .playlist-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+        }
+
+        .playlist-container li {
+            width: 80px;
+            height: 80px;
+            transform: rotate(45deg); /* Xoay hình thoi */
+            overflow: hidden;
+        }
+
+        .playlist-container li a {
+            display: block;
+            text-decoration: none;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .playlist-container li a img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+        }
+
+        .playlist-container li a:hover {
+            background-color: #ff6347;
+            transform: scale(1.1);
+        }
+
     </style>
 </head>
 <body>
+
+    <!-- Thêm phần chạy nhạc nền cho profile -->
+    <audio autoplay loop>
+        <source src="https://open.spotify.com/track/3XRG7BS7pstBjxpPpeSb0z?si=4b40eeae89f441ea" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
 
     <header>
         <h1>Welcome to My Website Profile</h1>
@@ -172,17 +215,36 @@
         </div>
     </section>
 
-    <!-- Favorite Music Playlist -->
+    <!-- Playlist yêu thích -->
     <section>
-        <h2>My Favorite Music Playlist</h2>
-        <div class="iframe-container">
-            <iframe src="https://open.spotify.com/embed/track/3XRG7BS7pstBjxpPpeSb0z?si=4b40eeae89f441ea" frameborder="0" allowfullscreen="" loading="lazy"></iframe>
-        </div>
+        <h2>My Favorite Music PlayList</h2>
+        <p>Click to listen to my playlist:</p>
+        <ul class="playlist-container">
+            <li>
+                <a href="https://open.spotify.com/track/37i9dQZF1E4xTpGY9MLJPI?utm_source=generator" target="_blank">
+                    <img src="images/spotify.jpg" alt="Playlist 1"> Playlist 1
+                </a>
+            </li>
+            <li>
+                <a href="https://open.spotify.com/track/0bTfvPdUr2wALFcCshXXqd?utm_source=generator" target="_blank">
+                    <img src="images/spotify.jpg" alt="Playlist 2"> Playlist 2
+                </a>
+            </li>
+        </ul>
     </section>
-
+<section>
+    <h2>Background Music</h2>
+    <p>Click to play the background music:</p>
+    <!-- Thêm thẻ <audio> để chạy nhạc nền cho profile -->
+    <audio controls autoplay>
+        <source src="https://open.spotify.com/track/3XRG7BS7pstBjxpPpeSb0z?si=4b40eeae89f441ea" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+</section>
     <footer>
         <p>© 2025 by Nem. Created with GitHub Pages.</p>
     </footer>
 
 </body>
 </html>
+
