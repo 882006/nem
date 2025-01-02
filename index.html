@@ -81,6 +81,7 @@
             margin-bottom: 20px;
         }
 
+        /* Cập nhật cho các iframe để có thể vừa vặn và dễ nhìn */
         .iframe-container {
             display: flex;
             justify-content: space-around;
@@ -101,6 +102,35 @@
             padding: 10px;
             text-align: center;
         }
+
+        .icon-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .icon-container a {
+            text-decoration: none;
+            color: white;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .icon-container a img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .icon-container a:hover {
+            transform: scale(1.1);
+            background-color: #ff6347;
+            padding: 5px;
+            border-radius: 12px;
+        }
+
     </style>
 </head>
 <body>
@@ -111,51 +141,42 @@
         <img src="images/chosocoolface.jpg" alt="Profile Picture" width="100">
     </header>
 
-    <!-- Các link kết nối -->
+    <!-- Connect with me -->
     <section>
         <h2>Connect with Me</h2>
-        <ul>
-            <li>
-                <a href="https://www.youtube.com/@nemnuong" target="_blank">
-                    <img src="images/youtube.jpg" alt="YouTube Icon"> YouTube
-                </a>
-            </li>
-            <li>
-                <a href="https://open.spotify.com/user/31njaguxvody6xit6gajvngzhhe4?si=55bdc1bfb41c4cf0" target="_blank">
-                    <img src="images/spotify.jpg" alt="Spotify Icon"> Spotify
-                </a>
-            </li>
-            <li>
-                <a href="https://discord.gg/2zrethSUr9" target="_blank">
-                    <img src="images/discord.jpg" alt="Discord Icon"> Discord Server
-                </a>
-            </li>
-        </ul>
+        <p>Follow me on:</p>
+        <div class="icon-container">
+            <a href="https://www.youtube.com/@nemnuong" target="_blank">
+                <img src="images/youtube.jpg" alt="YouTube Icon"> YouTube
+            </a>
+            <a href="https://open.spotify.com/user/31njaguxvody6xit6gajvngzhhe4?si=55bdc1bfb41c4cf0" target="_blank">
+                <img src="images/spotify.jpg" alt="Spotify Icon"> Spotify
+            </a>
+            <a href="https://discord.gg/2zrethSUr9" target="_blank">
+                <img src="images/discord.jpg" alt="Discord Icon"> Discord Server
+            </a>
+        </div>
     </section>
 
     <!-- Riot Games Stats -->
     <section>
         <h2>Riot Games Stats</h2>
-        <ul>
-            <li>
-                <a href="https://tracker.gg/valorant/profile/riot/Hatsune%20Miku%23nem/overview" target="_blank">
-                    <img src="images/valorant.jpg" alt="Valorant Icon"> Valorant Stats
-                </a>
-            </li>
-            <li>
-                <a href="https://tracker.gg/tft/profile/riot/Hatsune%20Miku%23nem/overview" target="_blank">
-                    <img src="images/tft.jpg" alt="TFT Icon"> Teamfight Tactics Stats
-                </a>
-            </li>
-        </ul>
+        <p>Follow me on:</p>
+        <div class="icon-container">
+            <a href="https://tracker.gg/valorant/profile/riot/Hatsune%20Miku%23nem/overview" target="_blank">
+                <img src="images/valorant.jpg" alt="Valorant Icon"> Valorant Stats
+            </a>
+            <a href="https://tracker.gg/tft/profile/riot/Hatsune%20Miku%23nem/overview" target="_blank">
+                <img src="images/tft.jpg" alt="TFT Icon"> Teamfight Tactics Stats
+            </a>
+        </div>
     </section>
 
-    <!-- Playlist yêu thích -->
+    <!-- Favorite Music Playlist -->
     <section>
-        <h2>My Favorite Music PlayList</h2>
+        <h2>My Favorite Music Playlist</h2>
         <div class="iframe-container">
-            <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1E4xTpGY9MLJPI?utm_source=generator" frameborder="0" allowfullscreen="" loading="lazy"></iframe>
-            <iframe src="https://open.spotify.com/embed/playlist/0bTfvPdUr2wALFcCshXXqd?utm_source=generator" frameborder="0" allowfullscreen="" loading="lazy"></iframe>
+            <iframe src="https://open.spotify.com/embed/track/3XRG7BS7pstBjxpPpeSb0z?si=4b40eeae89f441ea" frameborder="0" allowfullscreen="" loading="lazy"></iframe>
         </div>
     </section>
 
