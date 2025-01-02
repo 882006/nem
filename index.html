@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile about me</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -25,6 +24,8 @@
         header img {
             border-radius: 50%;
             margin-top: 10px;
+            width: 200px;
+            height: 200px;
             transition: opacity 0.3s ease;
         }
 
@@ -37,29 +38,10 @@
             font-size: 18px;
         }
 
-        .typing-effect {
-            display: inline-block;
-            white-space: nowrap;
-            overflow: hidden;
-            font-size: 18px;
-            width: 0;
-            animation: typing 5s steps(20) forwards, disappear 5s steps(20) 5s forwards;
-        }
-
-        @keyframes typing {
-            from { width: 0; }
-            to { width: 100%; }
-        }
-
-        @keyframes disappear {
-            from { width: 100%; }
-            to { width: 0; }
-        }
-
         .icon-container {
             display: flex;
             justify-content: center;
-            gap: 5cm;
+            gap: 2cm;
             margin-top: 20px;
         }
 
@@ -73,8 +55,8 @@
             align-items: center;
             justify-content: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-            width: 170px;
-            height: 170px;
+            width: 185px;
+            height: 185px;
             background-color: rgba(128, 128, 128, 0.5);
             border-radius: 50%;
         }
@@ -91,12 +73,12 @@
             width: 100%;
             position: relative;
             flex-wrap: wrap;
-            gap: 20cm;
+            gap: 2cm;
         }
 
         .playlist-container li {
             position: relative;
-            width: 240px;
+            width: 360px;
             height: 240px;
             background-color: rgba(128, 128, 128, 0.5);
             border-radius: 12px;
@@ -219,9 +201,9 @@
 
     <header>
         <h1>Welcome to My Website Profile</h1>
-        <p class="typing-effect">@nem_nuong.</p>
-        <img src="images/chosocoolface.jpg" alt="Profile Picture" width="200" onclick="this.style.opacity='0.5'">
-        <p>Here, you'll find links to my YouTube, Discord, Spotify, and Riot Games Stats!</p>
+        <p>@nem_nuong.</p>
+        <img src="images/chosocoolface.jpg" alt="Profile Picture">
+        <p>Here, you'll find to my links YouTube, Spotify , Discord Server</p>
     </header>
 
     <section>
