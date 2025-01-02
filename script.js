@@ -1,3 +1,3 @@
 document.addEventListener("DOMContentLoaded", function() {
-    console.log("Welcome to my project!");
+    console.log("Welcome to my Project!");
 });
