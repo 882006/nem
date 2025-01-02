@@ -5,6 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile about me</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Thêm Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        ul {
+            display: flex;
+            justify-content: space-around;
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            position: relative;
+            width: 60px; /* Chiều rộng của thoi */
+            height: 60px; /* Chiều cao của thoi */
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: rotate(45deg); /* Xoay hình thoi */
+            overflow: hidden; /* Cắt phần ngoài hình thoi */
+        }
+
+        h2 {
+            text-align: center; /* Căn giữa tiêu đề */
+            margin-bottom: 20px; /* Khoảng cách dưới tiêu đề */
+        }
+
+        .iframe-container {
+            display: flex; /* Căn chỉnh ngang với flexbox */
+            justify-content: center; /* Căn giữa các iframe */
+            gap: 20px; /* Khoảng cách giữa các iframe */
+            max-width: 100%; /* Đảm bảo container không vượt quá chiều rộng của màn hình */
+            margin: 0 auto; /* Căn giữa container */
+        }
+
+        .iframe-container iframe {
+            width: 45%; /* Chiều rộng iframe chiếm 45% chiều rộng của container */
+            height: 300px; /* Chiều cao bằng chiều rộng để tạo hình vuông */
+            border-radius: 12px; /* Bo góc iframe */
+            margin-right: 0; /* Đảm bảo không có khoảng cách bên phải */
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -13,66 +55,27 @@
         <img src="images/chosocoolface.jpg" alt="Profile Picture" width="100">
         <p>Connect my YouTube, Discord, Spotify, and Riot Games Stats!</p>
     </header>
-   <head>
-  <!-- Thêm Font Awesome CDN -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <style>
-    ul {
-      display: flex;
-      justify-content: space-around;
-      list-style-type: none;
-      padding: 0;
-    }
 
-    li {
-      position: relative;
-      width: 60px; /* Chiều rộng của thoi */
-      height: 60px; /* Chiều cao của thoi */
-      border-radius: 12px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      transform: rotate(45deg); /* Xoay hình thoi */
-      overflow: hidden; /* Cắt phần ngoài hình thoi */
-        
     <section>
-         <h2>Riot Games</h2>
+        <h2>Riot Games</h2>
         <ul>
             <li><a href="https://tracker.gg/valorant/profile/riot/Hatsune%20Miku%23nem/overview" target="_blank">Valorant Stats</a></li>
             <li><a href="https://tracker.gg/tft/profile/riot/Hatsune%20Miku%23nem/overview" target="_blank">Teamfight Tactics Stats</a></li>
+        </ul>
+    </section>
+
     <section>
-    <section>
-  <h2>My Favorite Music PlayList</h2>
-  
-  <style>
-    h2 {
-      text-align: center; /* Căn giữa tiêu đề */
-      margin-bottom: 20px; /* Khoảng cách dưới tiêu đề */
-    }
+        <h2>My Favorite Music PlayList</h2>
+        <div class="iframe-container">
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1E4xTpGY9MLJPI?utm_source=generator" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/0bTfvPdUr2wALFcCshXXqd?utm_source=generator" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+    </section>
 
-    .iframe-container {
-      display: flex; /* Căn chỉnh ngang với flexbox */
-      justify-content: center; /* Căn giữa các iframe */
-      gap: 20px; /* Khoảng cách giữa các iframe */
-      max-width: 100%; /* Đảm bảo container không vượt quá chiều rộng của màn hình */
-      margin: 0 auto; /* Căn giữa container */
-    }
-
-    .iframe-container iframe {
-      width: 45%; /* Chiều rộng iframe chiếm 45% chiều rộng của container */
-      height: 300px; /* Chiều cao bằng chiều rộng để tạo hình vuông */
-      border-radius: 12px; /* Bo góc iframe */
-      margin-right: 0; /* Đảm bảo không có khoảng cách bên phải */
-    }
-  </style>
-
-  <div class="iframe-container">
-    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1E4xTpGY9MLJPI?utm_source=generator" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/0bTfvPdUr2wALFcCshXXqd?utm_source=generator" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-  </div>
-</section>
     <footer>
         <p>© 2025 by Nem. Created with GitHub Pages.</p>
     </footer>
+</body>
+</html>
 </body>
 </html>
