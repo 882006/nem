@@ -23,8 +23,8 @@
         header img {
             border-radius: 50%;
             margin-top: 10px;
-            width: 5cm;
-            height: 5cm;
+            width: 4cm; /* Đã giảm 3cm */
+            height: 4cm; /* Đã giảm 3cm */
             object-fit: cover;
             transition: opacity 0.3s ease;
         }
@@ -43,6 +43,12 @@
         header p {
             margin-top: 5px;
             font-size: 12px;
+        }
+
+        .welcome-message {
+            font-size: 14px; /* Cỡ chữ 14 */
+            font-weight: bold;
+            margin-top: 1cm; /* Cách dưới 1cm */
         }
 
         .icon-container {
@@ -90,8 +96,8 @@
 
         .playlist-container li {
             position: relative;
-            width: 480px;
-            height: 280px;
+            width: 420px; /* Điều chỉnh để vừa với hình chữ nhật tròn */
+            height: 240px; /* Điều chỉnh */
             background-color: rgba(128, 128, 128, 0.5);
             border-radius: 12px;
             overflow: hidden;
@@ -121,12 +127,34 @@
             text-align: center;
             font-weight: bold;
             font-size: 12px;
+            position: relative;
         }
 
         footer #view-count {
             font-size: 14px;
             margin-top: 10px;
             font-weight: normal;
+        }
+
+        .profile-review {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 5cm; /* Kích thước 5cm */
+            height: 5cm; /* Kích thước 5cm */
+            background-color: rgba(128, 128, 128, 0.5);
+            border-radius: 15%;
+            font-size: 14px;
+            color: white;
+            padding: 10px;
+        }
+
+        .profile-review i {
+            margin-right: 5px;
+            color: white;
         }
 
         @media (max-width: 768px) {
@@ -153,6 +181,7 @@
         <img src="images/chosocoolface.jpg" alt="Profile Picture">
         <p class="username">Nem</p>
         <p>Here, you'll find my links: YouTube, Spotify, Discord Server</p>
+        <p class="welcome-message">Hello <3 Welcome to Nem Profile</p>
     </header>
 
     <section>
@@ -208,6 +237,9 @@
     <footer>
         <p>© 2025 by Nem. Created with GitHub Pages.</p>
         <p id="view-count">Page views: 0</p>
+        <div class="profile-review">
+            <i class="fa-solid fa-eye"></i> Profile View Count
+        </div>
     </footer>
 
     <script>
@@ -221,3 +253,4 @@
     </script>
 </body>
 </html>
+
