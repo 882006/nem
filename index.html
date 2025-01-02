@@ -65,6 +65,7 @@
             flex-direction: column;
             align-items: center; /* Căn giữa các icon */
             justify-content: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
         }
 
         .icon-container a img {
@@ -75,11 +76,11 @@
             margin-bottom: 5px; /* Khoảng cách giữa icon và tên */
         }
 
+        /* Hiệu ứng khi hover */
         .icon-container a:hover {
-            transform: scale(1.1);
+            transform: scale(1.2) rotate(10deg);
             background-color: #ff6347;
-            padding: 5px;
-            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
         }
 
         /* Phần Playlist */
@@ -88,21 +89,20 @@
             justify-content: space-around; /* Căn đều các Playlist */
             margin-top: 30px;
             width: 100%;
-            height: 400px; /* Đặt chiều cao cố định */
+            height: 400px;
             position: relative;
+            flex-wrap: wrap;
         }
 
         .playlist-container li {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 90%;
-            height: 90%;
-            background-color: #E4F991; /* Màu của hình thoi */
-            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); /* Tạo hình thoi */
+            position: relative;
+            width: 45%;
+            height: 45%;
+            background-color: #E4F991;
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
             border-radius: 12px;
             overflow: hidden;
+            margin: 10px;
         }
 
         .playlist-container li a {
@@ -132,11 +132,11 @@
             text-align: center;
             margin-top: 30px;
             color: white;
-            font-size: 14px; /* Chỉnh lại kích thước chữ nhỏ hơn */
+            font-size: 14px;
             position: absolute;
-            bottom: 20px; /* Di chuyển về gần cuối trang */
-            right: 20px; /* Di chuyển về phía bên phải */
-            background-color: rgba(0, 0, 0, 0.7); /* Màu nền xám mờ */
+            bottom: 20px;
+            right: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
             padding: 10px;
             border-radius: 10px;
         }
@@ -144,11 +144,44 @@
         .profile-view p {
             font-size: 16px;
         }
+
+        /* Media Query cho các thiết bị nhỏ */
+        @media (max-width: 768px) {
+            .icon-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .playlist-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .playlist-container li {
+                width: 90%;
+                height: 200px;
+                margin: 10px 0;
+            }
+        }
+
+        /* Media Query cho các thiết bị di động */
+        @media (max-width: 480px) {
+            .icon-container a {
+                font-size: 12px;
+            }
+
+            .playlist-container li {
+                height: 150px;
+            }
+
+            .profile-view {
+                font-size: 12px;
+            }
+        }
     </style>
 </head>
 <body>
 
-    <!-- Thêm phần chạy nhạc nền cho profile -->
     <audio autoplay loop>
         <source src="https://open.spotify.com/track/3XRG7BS7pstBjxpPpeSb0z?si=4b40eeae89f441ea" type="audio/mp3">
         Your browser does not support the audio element.
@@ -219,24 +252,18 @@
     </footer>
 
     <script>
-        // Kiểm tra nếu có giá trị 'view-count' trong localStorage
         let viewCount = localStorage.getItem('view-count');
         
-        // Nếu chưa có, đặt số lượt truy cập ban đầu là 0
         if (!viewCount) {
             viewCount = 0;
         }
         
-        // Tăng số lượt truy cập lên 1
         viewCount++;
         
-        // Lưu lại số lượt truy cập vào localStorage
         localStorage.setItem('view-count', viewCount);
         
-        // Hiển thị số lượt truy cập lên trang web
         document.getElementById('view-count').textContent = viewCount;
     </script>
 
 </body>
 </html>
-
