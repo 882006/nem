@@ -16,7 +16,7 @@
         }
 
         header {
-            background-color: #484848;
+            background-color: #000000;
             color: white;
             padding: 20px;
             text-align: center;
@@ -59,7 +59,7 @@
         .icon-container {
             display: flex;
             justify-content: center;
-            gap: 10cm;
+            gap: 5cm;
             margin-top: 20px;
         }
 
@@ -67,14 +67,14 @@
             text-decoration: none;
             color: white;
             text-align: center;
-            font-size: 14px;
+            font-size: 18px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-            width: 150px;
-            height: 150px;
+            width: 170px;
+            height: 170px;
             background-color: rgba(128, 128, 128, 0.5);
             border-radius: 50%;
         }
@@ -91,13 +91,13 @@
             width: 100%;
             position: relative;
             flex-wrap: wrap;
-            gap: 10cm;
+            gap: 20cm;
         }
 
         .playlist-container li {
             position: relative;
-            width: 220px;
-            height: 220px;
+            width: 240px;
+            height: 240px;
             background-color: rgba(128, 128, 128, 0.5);
             border-radius: 12px;
             overflow: hidden;
@@ -139,7 +139,7 @@
         }
 
         footer {
-            background-color: #333;
+            background-color: #000000;
             color: white;
             padding: 10px;
             text-align: center;
@@ -150,6 +150,23 @@
             font-size: 24px;
             color: white;
             margin-top: 10px;
+        }
+
+        .view-count {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: rgba(255, 255, 255, 0.3);
+            padding: 10px;
+            border-radius: 12px;
+            font-size: 10px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .view-count i {
+            font-size: 15px;
         }
 
         @media (max-width: 768px) {
@@ -255,9 +272,9 @@
 
     <section>
         <h2>Profile Review</h2>
-        <div class="profile-view">
-            <p>This is my profile where I share everything about me. Feel free to explore!</p>
-            <i class="fa-thin fa-eye eye-icon"></i>
+        <div class="view-count">
+            <i class="fa-solid fa-eye"></i>
+            <span id="view-count">0</span> views
         </div>
     </section>
 
