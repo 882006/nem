@@ -31,3 +31,73 @@ footer {
     margin-top: 2em;
     color: #555;
 }
+/* Cập nhật phần icon cho YouTube, Spotify, Discord */
+.icon-container a {
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Căn giữa các icon */
+    justify-content: center;
+    margin: 10px 0; /* Khoảng cách giữa các icon */
+}
+
+.icon-container a img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Đảm bảo icon là hình tròn */
+    object-fit: cover;
+    margin-bottom: 5px; /* Khoảng cách giữa icon và tên */
+}
+
+.icon-container a:hover {
+    transform: scale(1.1);
+    background-color: #ff6347;
+    padding: 5px;
+    border-radius: 12px;
+}
+
+/* Cập nhật cho phần playlist */
+.playlist-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.playlist-container li {
+    width: 120px;
+    height: 120px;
+    transform: rotate(45deg); /* Xoay hình thoi */
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.5); /* Màu nền xám mờ */
+    border-radius: 12px;
+}
+
+.playlist-container li a {
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    height: 100%;
+    width: 100%;
+}
+
+.playlist-container li a iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.playlist-container li a:hover {
+    background-color: #ff6347;
+    transform: scale(1.1);
+}
+
+/* Cập nhật cho phần Riot Games Stats */
+.icon-container a {
+    margin-bottom: 10px;
+}
