@@ -4,58 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile about me</title>
-    <link rel="stylesheet" href="style.css">
     <!-- Thêm Font Awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css"> <!-- Kết nối CSS ngoài nếu cần -->
     <style>
-        ul {
-            display: flex;
-            justify-content: space-around;
-            list-style-type: none;
+        /* CSS trong header */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
             padding: 0;
+            background-color: #f4f4f4; /* Màu nền trang */
         }
 
-        li {
-            position: relative;
-            width: 60px; /* Chiều rộng của thoi */
-            height: 60px; /* Chiều cao của thoi */
-            border-radius: 12px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transform: rotate(45deg); /* Xoay hình thoi */
-            overflow: hidden; /* Cắt phần ngoài hình thoi */
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
         }
 
-        h2 {
-            text-align: center; /* Căn giữa tiêu đề */
-            margin-bottom: 20px; /* Khoảng cách dưới tiêu đề */
+        header img {
+            border-radius: 50%;
+            margin-top: 10px;
         }
 
-        .iframe-container {
-            display: flex; /* Căn chỉnh ngang với flexbox */
-            justify-content: center; /* Căn giữa các iframe */
-            gap: 20px; /* Khoảng cách giữa các iframe */
-            max-width: 100%; /* Đảm bảo container không vượt quá chiều rộng của màn hình */
-            margin: 0 auto; /* Căn giữa container */
+        header h1 {
+            margin-bottom: 10px;
         }
 
-        .iframe-container iframe {
-            width: 45%; /* Chiều rộng iframe chiếm 45% chiều rộng của container */
-            height: 300px; /* Chiều cao bằng chiều rộng để tạo hình vuông */
-            border-radius: 12px; /* Bo góc iframe */
-            margin-right: 0; /* Đảm bảo không có khoảng cách bên phải */
+        header p {
+            margin-top: 5px;
+            font-size: 18px;
         }
     </style>
 </head>
 <body>
     <header>
         <h1>Welcome to My Website Profile</h1>
-        <p></p>
-        <img src="images/chosocoolface.jpg" alt="Profile Picture" width="100">
-        <p>Connect my YouTube, Discord, Spotify, and Riot Games Stats!</p>
+        <p>Here, you'll find links to my YouTube, Discord, Spotify, and Riot Games Stats!</p>
+        <img src="images/chosocoolface.jpg" alt="Profile Picture" width="100"> <!-- Đảm bảo đường dẫn hình ảnh chính xác -->
     </header>
 
+    <section>
+        <h2>Connect with Me</h2>
+        <p>Follow me on:</p>
+        <!-- Các liên kết mạng xã hội hoặc game stats của bạn có thể đặt ở đây -->
+    </section>
     <section>
     <h2>Riot Games Stats</h2>
     <ul>
