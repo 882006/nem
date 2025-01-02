@@ -1,91 +1,242 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- Thêm phần chạy nhạc nền cho profile -->
-<audio autoplay loop>
-    <source src="https://open.spotify.com/track/3XRG7BS7pstBjxpPpeSb0z?si=4b40eeae89f441ea" type="audio/mp3">
-    Your browser does not support the audio element.
-</audio>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile about me</title>
+    <!-- Thêm Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000000; /* Màu nền trang */
+        }
 
-<header>
-    <h1>Welcome to My Website Profile</h1>
-    <p>Here, you'll find links to my YouTube, Discord, Spotify, and Riot Games Stats!</p>
-    <img src="images/chosocoolface.jpg" alt="Profile Picture" width="100">
-</header>
+        header {
+            background-color: #484848; /* Màu nền xám cho header */
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
 
-<!-- Connect with me -->
-<section>
-    <h2>Connect with Me</h2>
-    <p>Follow me on:</p>
-    <div class="icon-container">
-        <a href="https://www.youtube.com/@nemnuong" target="_blank">
-            <img src="images/youtube.jpg" alt="YouTube Icon"> YouTube
-        </a>
-        <a href="https://open.spotify.com/user/31njaguxvody6xit6gajvngzhhe4?si=55bdc1bfb41c4cf0" target="_blank">
-            <img src="images/spotify.jpg" alt="Spotify Icon"> Spotify
-        </a>
-        <a href="https://discord.gg/2zrethSUr9" target="_blank">
-            <img src="images/discord.jpg" alt="Discord Icon"> Discord Server
-        </a>
-    </div>
-</section>
+        header img {
+            border-radius: 50%;
+            margin-top: 10px;
+        }
 
-<!-- Riot Games Stats -->
-<section>
-    <h2>Riot Games Stats</h2>
-    <p>Follow me on:</p>
-    <div class="icon-container">
-        <a href="https://tracker.gg/valorant/profile/riot/Hatsune%20Miku%23nem/overview" target="_blank">
-            <img src="images/valorant.jpg" alt="Valorant Icon"> Valorant Stats
-        </a>
-        <a href="https://tracker.gg/tft/profile/riot/Hatsune%20Miku%23nem/overview" target="_blank">
-            <img src="images/tft.jpg" alt="TFT Icon"> Teamfight Tactics Stats
-        </a>
-    </div>
-</section>
+        header h1 {
+            margin-bottom: 10px;
+        }
 
-<!-- Thêm phần playlist yêu thích -->
-<section>
-    <h2>My Favorite Playlists</h2>
-    <div class="playlist-container">
-        <li>
-            <a href="https://open.spotify.com/embed/playlist/37i9dQZF1E4xTpGY9MLJPI?utm_source=generator">
-                <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1E4xTpGY9MLJPI?utm_source=generator" width="100%" height="100%" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        header p {
+            margin-top: 5px;
+            font-size: 18px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        /* Cấu trúc hình thoi cho các liên kết */
+        .icon-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .icon-container a {
+            text-decoration: none;
+            color: white;
+            text-align: center;
+            font-size: 14px;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Căn giữa các icon */
+            justify-content: center;
+        }
+
+        .icon-container a img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%; /* Đảm bảo icon là hình tròn */
+            object-fit: cover;
+            margin-bottom: 5px; /* Khoảng cách giữa icon và tên */
+        }
+
+        .icon-container a:hover {
+            transform: scale(1.1);
+            background-color: #ff6347;
+            padding: 5px;
+            border-radius: 12px;
+        }
+
+        /* Phần Playlist */
+        .playlist-container {
+            display: flex;
+            justify-content: space-around; /* Căn đều các Playlist */
+            margin-top: 30px;
+            width: 100%;
+            height: 400px; /* Đặt chiều cao cố định */
+            position: relative;
+        }
+
+        .playlist-container li {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            height: 90%;
+            background-color: #E4F991; /* Màu của hình thoi */
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); /* Tạo hình thoi */
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .playlist-container li a {
+            display: block;
+            text-decoration: none;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+            height: 100%;
+            width: 100%;
+        }
+
+        .playlist-container li a iframe {
+            width: 100%;
+            height: 100%;
+            border-radius: 12px;
+            object-fit: cover;
+        }
+
+        .playlist-container li a:hover {
+            background-color: #ff6347;
+            transform: scale(1.1);
+        }
+
+        /* Phần Profile View */
+        .profile-view {
+            text-align: center;
+            margin-top: 30px;
+            color: white;
+            font-size: 14px; /* Chỉnh lại kích thước chữ nhỏ hơn */
+            position: absolute;
+            bottom: 20px; /* Di chuyển về gần cuối trang */
+            right: 20px; /* Di chuyển về phía bên phải */
+            background-color: rgba(0, 0, 0, 0.7); /* Màu nền xám mờ */
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .profile-view p {
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Thêm phần chạy nhạc nền cho profile -->
+    <audio autoplay loop>
+        <source src="https://open.spotify.com/track/3XRG7BS7pstBjxpPpeSb0z?si=4b40eeae89f441ea" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <header>
+        <h1>Welcome to My Website Profile</h1>
+        <p>Here, you'll find links to my YouTube, Discord, Spotify, and Riot Games Stats!</p>
+        <img src="images/chosocoolface.jpg" alt="Profile Picture" width="100">
+    </header>
+
+    <!-- Connect with me -->
+    <section>
+        <h2>Connect with Me</h2>
+        <p>Follow me on:</p>
+        <div class="icon-container">
+            <a href="https://www.youtube.com/@nemnuong" target="_blank">
+                <img src="images/youtube.jpg" alt="YouTube Icon"> YouTube
             </a>
-        </li>
-        <li>
-            <a href="https://open.spotify.com/embed/playlist/0bTfvPdUr2wALFcCshXXqd?utm_source=generator">
-                <iframe src="https://open.spotify.com/embed/playlist/0bTfvPdUr2wALFcCshXXqd?utm_source=generator" width="100%" height="100%" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            <a href="https://open.spotify.com/user/31njaguxvody6xit6gajvngzhhe4?si=55bdc1bfb41c4cf0" target="_blank">
+                <img src="images/spotify.jpg" alt="Spotify Icon"> Spotify
             </a>
-        </li>
-    </div>
-</section>
+            <a href="https://discord.gg/2zrethSUr9" target="_blank">
+                <img src="images/discord.jpg" alt="Discord Icon"> Discord Server
+            </a>
+        </div>
+    </section>
 
-<!-- Profile View -->
-<section class="profile-view">
-    <h2>Profile Views</h2>
-    <p>Number of views: <span id="view-count">0</span></p>
-</section>
+    <!-- Riot Games Stats -->
+    <section>
+        <h2>Riot Games Stats</h2>
+        <p>Follow me on:</p>
+        <div class="icon-container">
+            <a href="https://tracker.gg/valorant/profile/riot/Hatsune%20Miku%23nem/overview" target="_blank">
+                <img src="images/valorant.jpg" alt="Valorant Icon"> Valorant Stats
+            </a>
+            <a href="https://tracker.gg/tft/profile/riot/Hatsune%20Miku%23nem/overview" target="_blank">
+                <img src="images/tft.jpg" alt="TFT Icon"> Teamfight Tactics Stats
+            </a>
+        </div>
+    </section>
 
-<footer>
-    <p>© 2025 by Nem. Created with GitHub Pages.</p>
-</footer>
-<script>
-    // Kiểm tra nếu có giá trị 'view-count' trong localStorage
-    let viewCount = localStorage.getItem('view-count');
-    
-    // Nếu chưa có, đặt số lượt truy cập ban đầu là 0
-    if (!viewCount) {
-        viewCount = 0;
-    }
-    
-    // Tăng số lượt truy cập lên 1
-    viewCount++;
-    
-    // Lưu lại số lượt truy cập vào localStorage
-    localStorage.setItem('view-count', viewCount);
-    
-    // Hiển thị số lượt truy cập lên trang web
-    document.getElementById('view-count').textContent = viewCount;
-</script>
+    <!-- Thêm phần playlist yêu thích -->
+    <section>
+        <h2>My Favorite Playlists</h2>
+        <div class="playlist-container">
+            <li>
+                <a href="https://open.spotify.com/embed/playlist/37i9dQZF1E4xTpGY9MLJPI?utm_source=generator">
+                    <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1E4xTpGY9MLJPI?utm_source=generator" width="100%" height="100%" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                </a>
+            </li>
+            <li>
+                <a href="https://open.spotify.com/embed/playlist/0bTfvPdUr2wALFcCshXXqd?utm_source=generator">
+                    <iframe src="https://open.spotify.com/embed/playlist/0bTfvPdUr2wALFcCshXXqd?utm_source=generator" width="100%" height="100%" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                </a>
+            </li>
+        </div>
+    </section>
+
+    <!-- Profile View -->
+    <section class="profile-view">
+        <h2>Profile Views</h2>
+        <p>Number of views: <span id="view-count">0</span></p>
+    </section>
+
+    <footer>
+        <p>© 2025 by Nem. Created with GitHub Pages.</p>
+    </footer>
+
+    <script>
+        // Kiểm tra nếu có giá trị 'view-count' trong localStorage
+        let viewCount = localStorage.getItem('view-count');
+        
+        // Nếu chưa có, đặt số lượt truy cập ban đầu là 0
+        if (!viewCount) {
+            viewCount = 0;
+        }
+        
+        // Tăng số lượt truy cập lên 1
+        viewCount++;
+        
+        // Lưu lại số lượt truy cập vào localStorage
+        localStorage.setItem('view-count', viewCount);
+        
+        // Hiển thị số lượt truy cập lên trang web
+        document.getElementById('view-count').textContent = viewCount;
+    </script>
+
 </body>
 </html>
+
