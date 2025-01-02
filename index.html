@@ -49,7 +49,7 @@
             text-align: center;
         }
 
-        /* Cấu trúc hình thoi cho các liên kết */
+        /* Cấu trúc hình vuông cho các liên kết */
         .icon-container {
             display: flex;
             justify-content: center;
@@ -96,13 +96,13 @@
 
         .playlist-container li {
             position: relative;
-            width: 45%; /* Đảm bảo mỗi playlist có cùng chiều rộng */
-            height: 100%;
+            width: 200px; /* Mỗi playlist có chiều rộng cố định */
+            height: 200px; /* Đảm bảo chiều cao giống nhau */
             background-color: #E4F991;
-            clip-path: none; /* Loại bỏ hiệu ứng hình thoi */
-            border-radius: 12px;
+            border-radius: 12px; /* Các góc vuông tròn */
             overflow: hidden;
             margin: 10px;
+            transition: transform 0.3s ease, background-color 0.3s ease;
         }
 
         .playlist-container li a {
@@ -122,9 +122,9 @@
             object-fit: cover;
         }
 
-        .playlist-container li a:hover {
-            background-color: #ff6347;
+        .playlist-container li:hover {
             transform: scale(1.1);
+            background-color: rgba(0, 0, 0, 0.7);
         }
 
         /* Phần Profile View */
@@ -135,8 +135,11 @@
             font-size: 14px;
             position: relative;
             padding: 10px;
-            border-radius: 10px;
+            border-radius: 12px; /* Hình vuông với các góc tròn */
             background-color: rgba(0, 0, 0, 0.7);
+            width: 250px;
+            height: 150px; /* Chiều cao ngắn lại */
+            margin: 0 auto;
         }
 
         .profile-view p {
@@ -160,6 +163,12 @@
                 height: 200px;
                 margin: 10px 0;
             }
+
+            .profile-view {
+                font-size: 12px;
+                width: 200px;
+                height: 130px;
+            }
         }
 
         /* Media Query cho các thiết bị di động */
@@ -174,6 +183,8 @@
 
             .profile-view {
                 font-size: 12px;
+                width: 180px;
+                height: 120px;
             }
         }
     </style>
