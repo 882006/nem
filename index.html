@@ -23,25 +23,26 @@
         header img {
             border-radius: 50%;
             margin-top: 10px;
-            width: 7cm;
-            height: 7cm;
+            width: 5cm; /* Giảm đi 2cm */
+            height: 5cm; /* Giảm đi 2cm */
             object-fit: cover;
             transition: opacity 0.3s ease;
         }
 
         header h1 {
-            margin-bottom: 10px;
+            margin-top: 15px;
             font-size: 28px;
         }
 
         .username {
             margin-top: 10px;
-            font-size: 16px;
+            font-size: 24px;
+            font-weight: bold; /* Tên Nem lớn hơn */
         }
 
         header p {
             margin-top: 5px;
-            font-size: 12px; /* Cỡ chữ được tăng */
+            font-size: 12px;
         }
 
         .icon-container {
@@ -60,16 +61,18 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            transition: transform 0.3s ease, background-color 0.3s ease;
             width: 175px;
             height: 175px;
             background-color: rgba(128, 128, 128, 0.5);
-            border-radius: 50%;
+            border-radius: 15%; /* Viền vuông tròn */
+            overflow: hidden;
+            transition: transform 0.3s ease, background-color 0.3s ease;
         }
 
         .icon-container a img {
-            width: 50%;
+            width: 100%;
             height: auto;
+            border-radius: 50%; /* Hình ảnh là hình tròn */
         }
 
         .icon-container a:hover {
@@ -87,8 +90,8 @@
 
         .playlist-container li {
             position: relative;
-            width: 400px;
-            height: 200px;
+            width: 480px; /* Tăng thêm 8cm */
+            height: 280px; /* Tăng thêm 8cm */
             background-color: rgba(128, 128, 128, 0.5);
             border-radius: 12px;
             overflow: hidden;
@@ -133,7 +136,7 @@
 
             .playlist-container li {
                 width: 90%;
-                height: 200px;
+                height: 300px;
                 margin: 10px 0;
             }
         }
@@ -141,9 +144,8 @@
 </head>
 <body>
     <header>
-        <h1>Welcome to Nem Profile</h1>
         <img src="images/chosocoolface.jpg" alt="Profile Picture">
-        <p class="username">@nem_nuong.</p>
+        <p class="username">Nem</p> <!-- Tên Nem to hơn, ở dưới ảnh -->
         <p>Here, you'll find my links: YouTube, Spotify, Discord Server</p>
     </header>
 
@@ -200,5 +202,15 @@
     <footer>
         <p>© 2025 by Nem. Created with GitHub Pages.</p>
     </footer>
+
+    <script>
+        let viewCount = localStorage.getItem('view-count');
+        if (!viewCount) {
+            viewCount = 0;
+        }
+        viewCount++;
+        localStorage.setItem('view-count', viewCount);
+        document.getElementById('view-count').textContent = viewCount;
+    </script>
 </body>
 </html>
