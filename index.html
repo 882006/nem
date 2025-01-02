@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile about me</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -24,8 +25,8 @@
         header img {
             border-radius: 50%;
             margin-top: 10px;
-            width: 200px;
-            height: 200px;
+            width: 10cm;
+            height: 10cm;
             transition: opacity 0.3s ease;
         }
 
@@ -55,8 +56,8 @@
             align-items: center;
             justify-content: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-            width: 185px;
-            height: 185px;
+            width: 175px;
+            height: 175px;
             background-color: rgba(128, 128, 128, 0.5);
             border-radius: 50%;
         }
@@ -70,16 +71,14 @@
             display: flex;
             justify-content: center;
             margin-top: 30px;
-            width: 100%;
-            position: relative;
-            flex-wrap: wrap;
             gap: 2cm;
+            flex-wrap: wrap;
         }
 
         .playlist-container li {
             position: relative;
-            width: 360px;
-            height: 240px;
+            width: 320px;
+            height: 120px;
             background-color: rgba(128, 128, 128, 0.5);
             border-radius: 12px;
             overflow: hidden;
@@ -154,7 +153,7 @@
         @media (max-width: 768px) {
             .icon-container {
                 flex-direction: column;
-                gap: 3cm;
+                gap: 2cm;
             }
 
             .playlist-container {
@@ -193,7 +192,6 @@
     </style>
 </head>
 <body>
-
     <audio autoplay loop>
         <source src="https://open.spotify.com/track/3XRG7BS7pstBjxpPpeSb0z?si=4b40eeae89f441ea" type="audio/mp3">
         Your browser does not support the audio element.
@@ -201,9 +199,9 @@
 
     <header>
         <h1>Welcome to My Website Profile</h1>
-        <p>@nem_nuong.</p>
+        <p>@nem_nuong</p>
         <img src="images/chosocoolface.jpg" alt="Profile Picture">
-        <p>Here, you'll find to my links YouTube, Spotify , Discord Server</p>
+        <p>Here, you'll find to my links YouTube, Spotify, Discord Server</p>
     </header>
 
     <section>
@@ -272,6 +270,5 @@
         localStorage.setItem('view-count', viewCount);
         document.getElementById('view-count').textContent = viewCount;
     </script>
-
 </body>
 </html>
