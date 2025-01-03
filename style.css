@@ -59,7 +59,8 @@ header img:active {
 }
 
 /* Dấu ba chấm hiệu ứng */
-.about-me-icons .dots {
+.about-me-icons .dots::after {
+    content: '.';
     font-size: 30px;
     color: white;
     animation: dots-animation 1.5s infinite;
