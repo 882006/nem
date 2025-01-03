@@ -21,50 +21,29 @@
             position: relative;
         }
 
-        .welcome-icons {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            right: 10px;
-        }
-
-        .welcome-icons .heart-icon {
-            font-size: 20px;
-            color: black;
-        }
-
-        .welcome-icons .dots-icon {
-            font-size: 20px;
-            color: white;
-            animation: dots-animation 1.5s infinite steps(1);
-        }
-
-        @keyframes dots-animation {
-            0%, 100% { content: ""; }
-            33% { content: "."; }
-            66% { content: ".."; }
-        }
-
-        .profile-review {
-            position: absolute;
-            top: 10px;
-            left: 10px;
+        header img {
+            border-radius: 50%;
+            margin-top: 10px;
             width: 6cm;
-            height: 1cm;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: rgba(128, 128, 128, 0.5);
-            border-radius: 15px;
-            font-size: 14px;
-            color: white;
+            height: 6cm;
+            object-fit: cover;
+            transition: opacity 0.3s ease;
         }
 
-        .profile-review i {
-            margin-right: 5px;
+        header h1 {
+            margin-top: 15px;
+            font-size: 28px;
+        }
+
+        .username {
+            margin-top: 10px;
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        header p {
+            margin-top: 5px;
+            font-size: 16px;
         }
 
         .welcome-message {
@@ -73,44 +52,55 @@
             margin-top: 1cm;
         }
 
-        header img {
-            border-radius: 50%;
-            margin-top: 10px;
-            width: 6cm;
-            height: 6cm;
-            object-fit: cover;
-        }
-
-        .username {
-            font-size: 30px;
-            font-weight: bold;
-        }
-
-        header p {
-            font-size: 16px;
-        }
-
         .icon-container {
             display: flex;
             justify-content: center;
-            gap: 3cm;
+            gap: 2cm;
             margin-top: 20px;
+        }
+
+        .icon-container a {
+            text-decoration: none;
+            color: white;
+            text-align: center;
+            font-size: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 175px;
+            height: 175px;
+            background-color: rgba(128, 128, 128, 0.5);
+            border-radius: 15%;
+            overflow: hidden;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .icon-container a img {
+            width: 80%;
+            height: 80%;
+            border-radius: 50%;
+        }
+
+        .icon-container a:hover {
+            background-color: rgba(255, 255, 255, 0.5);
+            transform: scale(1.2);
         }
 
         .playlist-container {
             display: flex;
             justify-content: center;
-            gap: 2cm;
             margin-top: 30px;
+            gap: 2cm;
             flex-wrap: wrap;
         }
 
         .playlist-container li {
             position: relative;
-            width: 300px; /* Tăng kích thước */
-            height: 300px; /* Tăng kích thước */
+            width: 9cm;
+            height: 9cm;
             background-color: rgba(128, 128, 128, 0.5);
-            border-radius: 15px;
+            border-radius: 12px;
             overflow: hidden;
             margin: 10px;
             transition: transform 0.3s ease, background-color 0.3s ease;
@@ -144,6 +134,57 @@
             text-align: center;
             font-weight: bold;
             font-size: 10px;
+            position: relative;
+        }
+
+        .profile-review {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: auto;
+            height: 1cm;
+            background-color: rgba(128, 128, 128, 0.5);
+            border-radius: 5px;
+            font-size: 12px;
+            color: white;
+            padding: 5px 10px;
+        }
+
+        .profile-review i {
+            margin-right: 5px;
+            color: white;
+        }
+
+        .about-me-icons {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .about-me-icons .heart {
+            font-size: 20px;
+            margin-right: 5px;
+            color: black;
+        }
+
+        .about-me-icons .dots {
+            font-size: 20px;
+            color: white;
+            animation: dots-animation 2s infinite;
+        }
+
+        @keyframes dots-animation {
+            0%, 20% { content: '.'; }
+            40% { content: '..'; }
+            60% { content: '...'; }
+            80%, 100% { content: ''; }
         }
 
         @media (max-width: 768px) {
@@ -167,12 +208,9 @@
 </head>
 <body>
     <header>
-        <div class="welcome-icons">
-            <i class="fas fa-heart heart-icon"></i>
-            <span class="dots-icon">...</span>
-        </div>
-        <div class="profile-review">
-            <i class="fa-solid fa-eye"></i> Page Review: <span id="view-count">0</span>
+        <div class="about-me-icons">
+            <i class="fa-solid fa-heart heart"></i>
+            <span class="dots">...</span>
         </div>
         <p class="welcome-message">Hello <3 Welcome to Nem Profile</p>
         <img src="images/chosocoolface.jpg" alt="Profile Picture">
@@ -181,7 +219,23 @@
     </header>
 
     <section>
+        <h2 style="text-align: center; margin-top: 20px;">Connect with Me</h2>
+        <p style="text-align: center;">Follow me on:</p>
+        <div class="icon-container">
+            <a href="https://www.youtube.com/@nemnuong" target="_blank">
+                <img src="images/Youtube.png" alt="YouTube Icon"> YouTube
+            </a>
+            <a href="https://open.spotify.com/user/31njaguxvody6xit6gajvngzhhe4?si=55bdc1bfb41c4cf0" target="_blank">
+                <img src="images/Spotify.png" alt="Spotify Icon"> Spotify
+            </a>
+            <a href="https://discord.gg/2zrethSUr9" target="_blank">
+                <img src="images/discord.jpg" alt="Discord Icon"> Discord Server
+            </a>
+        </div>
+    </section>
+    <section>
         <h2 style="text-align: center; margin-top: 20px;">Riot Games Stats</h2>
+        <p style="text-align: center;">Watch me on:</p>
         <div class="icon-container">
             <a href="https://tracker.gg/valorant/profile/riot/Hatsune%20Miku%23nem/overview" target="_blank">
                 <img src="images/Valorant.png" alt="Valorant Icon"> Valorant Stats
@@ -191,9 +245,9 @@
             </a>
         </div>
     </section>
-
     <section>
         <h2 style="text-align: center; margin-top: 20px;">My Favorite Playlists</h2>
+        <p style="text-align: center;">Listen to my playlists:</p>
         <ul class="playlist-container">
             <li>
                 <a href="https://open.spotify.com/embed/playlist/37i9dQZF1E4xTpGY9MLJPI?utm_source=generator">
@@ -211,10 +265,13 @@
             </li>
         </ul>
     </section>
-
     <footer> 
         <p>© 2025 by Nem. Created with GitHub Pages.</p>
     </footer>
+
+    <div class="profile-review">
+        <i class="fa-solid fa-eye"></i> Page Review: <span id="view-count">0</span>
+    </div>
 
     <script>
         let viewCount = localStorage.getItem('view-count');
