@@ -1,16 +1,19 @@
-/* Phần CSS cập nhật */
+/* Phần CSS được cập nhật */
 body {
     font-family: Arial, sans-serif;
     text-align: center;
     background-color: #000000;
     margin: 0;
     padding: 0;
+    color: white;
+    transition: background-color 1s, color 1s; /* Thêm hiệu ứng chuyển màu */
 }
 
+/* Giao diện Header */
 header {
     background-color: #333;
-    color: white;
     padding: 1em 0;
+    animation: glow-animation 3s infinite alternate; /* Thêm hiệu ứng sáng tối cho header */
 }
 
 header h1 {
@@ -26,7 +29,7 @@ header img {
     transition: opacity 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
     border: 2mm solid white;
     padding: 1cm;
-    animation: glow-animation 2s infinite;
+    animation: glow-animation 2s infinite; /* Thêm hiệu ứng sáng tối */
 }
 
 @keyframes glow-animation {
@@ -55,6 +58,7 @@ header img:active {
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
 }
 
+/* Dấu ba chấm hiệu ứng */
 .about-me-icons .dots {
     font-size: 30px;
     color: white;
@@ -71,12 +75,10 @@ header img:active {
 .icon-container a {
     text-decoration: none;
     color: white;
-    text-align: center;
     font-size: 14px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     margin: 10px 0;
 }
 
@@ -124,12 +126,14 @@ footer {
     color: #555;
 }
 
+/* Cập nhật phần Valorant và TFT Stats */
 .stats-container iframe {
     width: 100%;
     height: 500px;
     border: none;
 }
 
+/* Cập nhật cho các phần tử đứng ngang nhau */
 @media (max-width: 768px) {
     .playlist-container {
         flex-direction: column;
@@ -145,4 +149,11 @@ footer {
     .stats-container iframe {
         height: 450px;
     }
+}
+
+/* Hiệu ứng chuyển màu nền và văn bản */
+@keyframes color-change {
+    0% { background-color: #000000; color: white; }
+    50% { background-color: #ffffff; color: black; }
+    100% { background-color: #000000; color: white; }
 }
