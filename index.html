@@ -5,164 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        /* Phần CSS được cập nhật */
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #000000;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            background-color: #333;
-            color: white;
-            padding: 1em 0;
-        }
-
-        header h1 {
-            margin: 0;
-        }
-
-        header img {
-            border-radius: 50%;
-            margin-top: 10px;
-            width: 6cm;  /* Tăng kích thước avatar */
-            height: 6cm;
-            object-fit: cover;
-            transition: opacity 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
-            border: 2mm solid white;  /* Thu nhỏ viền avatar */
-            padding: 1cm; /* Khoảng cách giữa ảnh và viền */
-            animation: glow-animation 2s infinite; /* Thêm hiệu ứng sáng tối */
-        }
-
-        /* Hiệu ứng sáng lên và tối dần của Avatar */
-        @keyframes glow-animation {
-            0% {
-                opacity: 0.7;
-                box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-            }
-            50% {
-                opacity: 1;
-                box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
-            }
-            100% {
-                opacity: 0.7;
-                box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-            }
-        }
-
-        /* Khi hover vào avatar */
-        header img:hover {
-            opacity: 0.5;
-            box-shadow: 0 0 30px rgba(255, 255, 255, 0.5); /* Sáng lên khi hover */
-        }
-
-        /* Viền xung quanh avatar khi click */
-        header img:active {
-            opacity: 0.6;
-            border: 5mm solid #ff00ff; /* Viền màu tím khi click */
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
-        }
-
-        .about-me-icons .dots {
-            font-size: 30px; /* Tăng kích thước dấu ba chấm */
-            color: white;
-            animation: dots-animation 1.5s infinite; /* Cập nhật thời gian cho dấu ba chấm */
-        }
-
-        /* Hiệu ứng dấu ba chấm */
-        @keyframes dots-animation {
-            0% { content: '.'; }
-            33% { content: '..'; }
-            66% { content: '...'; }
-            100% { content: '....'; }
-        }
-
-        .icon-container a {
-            text-decoration: none;
-            color: white;
-            text-align: center;
-            font-size: 14px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            margin: 10px 0;
-        }
-
-        .playlist-container {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 30px;
-            flex-wrap: wrap;
-            justify-content: space-around;
-        }
-
-        /* Điều chỉnh kích thước của các iframe để chúng đồng đều */
-        .playlist-container li {
-            width: 320px;
-            height: 250px;
-            background-color: rgba(0, 0, 0, 0.5);
-            border-radius: 15px;
-            overflow: hidden;
-            margin: 10px;
-            transition: transform 0.3s ease;
-        }
-
-        .playlist-container li a {
-            display: block;
-            text-decoration: none;
-            text-align: center;
-            color: white;
-            font-weight: bold;
-            height: 100%;
-            width: 100%;
-        }
-
-        .playlist-container li a iframe {
-            width: 100%;
-            height: 100%;
-            border-radius: 15px;
-        }
-
-        .playlist-container li:hover {
-            transform: scale(1.1);
-            background-color: rgba(255, 255, 255, 0.5);
-        }
-
-        footer {
-            margin-top: 2em;
-            color: #555;
-        }
-
-        /* Cập nhật phần Valorant và TFT Stats */
-        .stats-container iframe {
-            width: 100%;
-            height: 500px;
-            border: none;
-        }
-
-        /* Cập nhật cho các phần tử đứng ngang nhau */
-        @media (max-width: 768px) {
-            .playlist-container {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .playlist-container li {
-                width: 90%;
-                height: 300px;
-                margin: 10px 0;
-            }
-
-            .stats-container iframe {
-                height: 450px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css"> <!-- Liên kết với tệp CSS của bạn -->
 </head>
 <body>
     <header>
@@ -178,8 +21,8 @@
     </header>
 
     <section>
-        <h2 style="text-align: center; margin-top: 20px;">Connect with Me</h2>
-        <p style="text-align: center;">Follow me on:</p>
+        <h2>Connect with Me</h2>
+        <p>Follow me on:</p>
         <div class="icon-container">
             <a href="https://www.youtube.com/@nemnuong" target="_blank">
                 <img src="images/Youtube.png" alt="YouTube Icon"> YouTube
@@ -194,35 +37,31 @@
     </section>
 
     <section>
-        <h2 style="text-align: center; margin-top: 20px;">My Favorite Playlists</h2>
-        <p style="text-align: center;">Listen to my playlists:</p>
+        <h2>My Favorite Playlists</h2>
+        <p>Listen to my playlists:</p>
         <ul class="playlist-container">
             <li>
                 <a href="https://open.spotify.com/embed/playlist/37i9dQZF1E4xTpGY9MLJPI?utm_source=generator">
-                    <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1E4xTpGY9MLJPI?utm_source=generator" 
-                        width="100%" height="100%" frameBorder="0" allowfullscreen="" 
-                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1E4xTpGY9MLJPI?utm_source=generator" width="100%" height="100%" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                 </a>
             </li>
             <li>
                 <a href="https://open.spotify.com/embed/playlist/0bTfvPdUr2wALFcCshXXqd?utm_source=generator">
-                    <iframe src="https://open.spotify.com/embed/playlist/0bTfvPdUr2wALFcCshXXqd?utm_source=generator" 
-                        width="100%" height="100%" frameBorder="0" allowfullscreen="" 
-                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    <iframe src="https://open.spotify.com/embed/playlist/0bTfvPdUr2wALFcCshXXqd?utm_source=generator" width="100%" height="100%" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                 </a>
             </li>
         </ul>
     </section>
 
     <section class="stats-container">
-        <h2 style="text-align: center; margin-top: 20px;">Valorant Stats</h2>
-        <p style="text-align: center;">See my latest Valorant stats:</p>
+        <h2>Valorant Stats</h2>
+        <p>See my latest Valorant stats:</p>
         <iframe src="https://tracker.gg/valorant/profile/riot/Hatsune%20Miku%23nem/overview"></iframe>
     </section>
 
     <section class="stats-container">
-        <h2 style="text-align: center; margin-top: 20px;">TFT Stats</h2>
-        <p style="text-align: center;">Check out my latest TFT stats:</p>
+        <h2>TFT Stats</h2>
+        <p>Check out my latest TFT stats:</p>
         <iframe src="https://tracker.gg/tft/profile/riot/Hatsune%20Miku%23nem/overview"></iframe>
     </section>
 
@@ -230,14 +69,6 @@
         <p>© 2025 by Nem. Created with GitHub Pages.</p>
     </footer>
 
-    <script>
-        let viewCount = localStorage.getItem('view-count');
-        if (!viewCount) {
-            viewCount = 0;
-        }
-        viewCount++;
-        localStorage.setItem('view-count', viewCount);
-        document.getElementById('view-count').textContent = `${viewCount}`;
-    </script>
+    <script src="script.js"></script> <!-- Liên kết với tệp JS của bạn -->
 </body>
 </html>
