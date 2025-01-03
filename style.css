@@ -293,6 +293,7 @@ header img {
     cursor: pointer; /* Thêm con trỏ chỉ tay */
     transition: filter 0.3s ease, background-color 0.3s ease; /* Hiệu ứng mượt */
 }
+
 .username:active {
     filter: brightness(1.5); /* Tăng độ sáng 50% */
     background-color: rgba(255, 255, 255, 0.1); /* Thêm hiệu ứng nền sáng nhẹ */
