@@ -123,17 +123,44 @@ footer {
     animation: dots-animation 2s infinite;
 }
 
+/* Hiệu ứng dấu ba chấm (...) */
 @keyframes dots-animation {
-    0% {
-        content: '.';
-    }
-    33% {
-        content: '..';
-    }
-    66% {
-        content: '...';
-    }
-    100% {
-        content: '..';
-    }
+    0% { content: '.'; }
+    33% { content: '..'; }
+    66% { content: '...'; }
+    100% { content: '....'; }
 }
+
+/* Phần tử chứa dấu ba chấm */
+.about-me-icons .dots {
+    font-size: 20px;
+    color: white;
+    animation: dots-animation 1s infinite;
+}
+
+/* Phần viền avatar */
+header img {
+    border-radius: 50%;
+    margin-top: 10px;
+    width: 5.4cm;
+    height: 5.4cm;
+    object-fit: cover;
+    transition: opacity 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
+    border: 3px solid white; /* Viền trắng xung quanh avatar */
+    padding: 0.5cm; /* Khoảng cách giữa ảnh và viền */
+}
+
+/* Khi hover vào avatar */
+header img:hover {
+    opacity: 0.8;
+    border: 5mm solid #ff00ff; /* Viền màu tím khi hover */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8); /* Hiệu ứng bóng đổ xung quanh avatar */
+}
+
+/* Viền xung quanh avatar thêm hiệu ứng */
+header img:active {
+    opacity: 0.6;
+    border: 8mm solid #ff00ff; /* Viền dày hơn khi click */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8); /* Bóng đổ rõ hơn khi click */
+}
+
