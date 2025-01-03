@@ -382,27 +382,34 @@
     z-index: 9999; /* Đảm bảo luôn nằm trên các phần tử khác */
 }
 
+/* Nội dung overlay */
 .overlay-content {
     text-align: center;
     color: white;
-    font-size: 24px;
+    font-size: 40px;
+    line-height: 1.5;
+    padding: 20px;
 }
 
+/* Nút bấm */
 #enter-button {
-    padding: 10px 20px;
-    font-size: 20px;
+    padding: 20px 40px;
+    font-size: 24px;
     color: white;
     background-color: #444;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
-    margin-top: 20px;
-    transition: background-color 0.3s ease;
+    margin-top: 30px;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
 }
 
+/* Hiệu ứng hover: sáng lên */
 #enter-button:hover {
     background-color: white;
     color: black;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); /* Hiệu ứng sáng trắng */
+    transform: scale(1.1); /* Phóng to nhẹ */
 }
     </style>
 </head>
@@ -416,9 +423,14 @@
 <button id="pause-music">Pause Music</button>
 
 <script>
-    const music = document.getElementById("background-music");
-    document.getElementById("play-music").addEventListener("click", () => music.play());
-    document.getElementById("pause-music").addEventListener("click", () => music.pause());
+    document.getElementById("enter-button").addEventListener("click", function () {
+    // Ẩn lớp overlay
+    document.getElementById("overlay").style.display = "none";
+
+    // Phát nhạc nền
+    const audio = document.getElementById("background-music");
+    audio.play();
+});
 </script>
 <script>
     const text = "Nem";
@@ -480,6 +492,7 @@
         <button id="enter-button">Click to Enter</button>
     </div>
 </div>
+<audio id="background-music" src="nhacnen.mp4" loop></audio>
     </div>
 </header>
     <section>
