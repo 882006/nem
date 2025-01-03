@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me</title>
+    <title>About me</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
@@ -18,12 +18,16 @@
 
         @keyframes border-glow {
             0% {
+                border-color: black;
+                box-shadow: 0 0 10px black;
+            }
+            50% {
                 border-color: white;
-                box-shadow: 0 0 10px white;
+                box-shadow: 0 0 30px white;
             }
             100% {
-                border-color: gray;
-                box-shadow: 0 0 30px gray;
+                border-color: black;
+                box-shadow: 0 0 10px black;
             }
         }
 
@@ -37,13 +41,14 @@
         header img {
             border-radius: 50%;
             margin-top: 10px;
-            width: 5.4cm;
-            height: 5.4cm;
+            width: 7cm; /* Increased size */
+            height: 7cm; /* Increased size */
             object-fit: cover;
             transition: opacity 0.3s ease, border 0.3s ease;
-            border: 3px solid white;
+            border: 5px solid white; /* Increased border thickness */
             padding: 1cm;
             box-sizing: border-box;
+            box-shadow: 0 0 15px white; /* Added glowing effect */
         }
 
         header img:active {
@@ -58,7 +63,7 @@
 
         .username {
             margin-top: 10px;
-            font-size: 30px;
+            font-size: 30px; /* Increased font size */
             font-weight: bold;
         }
 
@@ -160,7 +165,7 @@
             width: 12cm;
             height: 12cm;
             background-color: rgba(128, 128, 128, 0.5);
-            border-radius: 50%;
+            border-radius: 15px; /* Rounded corners */
             overflow: hidden;
             display: flex;
             align-items: center;
@@ -172,7 +177,7 @@
             width: 90%;
             height: 90%;
             border: none;
-            border-radius: 50%;
+            border-radius: 15px; /* Rounded corners */
         }
 
         .game-card:hover {
@@ -283,7 +288,7 @@
         <p class="welcome-message">Hello <3 Welcome to Nem Profile</p>
         <img src="images/chosocoolface.jpg" alt="Profile Picture">
         <p class="username">Nem</p>
-        <p>Here, you'll find my links: YouTube, Spotify, Discord Server</p>
+        <p style="font-size: 20px;">Here, you'll find my links: YouTube, Spotify, Discord Server</p>
     </header>
 
     <section>
