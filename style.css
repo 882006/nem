@@ -247,4 +247,44 @@ header img {
     border: 5px solid white;
     box-shadow: 0 0 20px white;
 }
+@keyframes heart-beat {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.2);
+    }
+}
+
+@keyframes dots-animation {
+    0%, 20% { content: ''; }
+    40% { content: '.'; }
+    60% { content: '..'; }
+    80%, 100% { content: '...'; }
+}
+
+.welcome-message {
+    font-size: 36px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.welcome-message .heart {
+    font-size: 24px;
+    color: red;
+    animation: heart-beat 1s infinite alternate;
+}
+
+.welcome-message .dots {
+    font-size: 24px;
+    color: white;
+    animation: dots-animation 2s steps(5, end) infinite;
+}
+
 
