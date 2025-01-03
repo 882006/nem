@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me🔫</title>
+    <title></title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         /* Thêm custom scrollbar */
@@ -127,42 +127,42 @@
             font-size: 28px;
         }
 
-      header .content-container {
+      .content-container {
         display: flex;
         flex-direction: column;
         align-items: center;
         text-align: center;
     }
 
-    header img {
-        border-radius: 50%;
-        margin-top: 1cm; /* Khoảng cách phía trên */
-        margin-bottom: 20px; /* Khoảng cách phía dưới để tách Welcome Message */
-        width: 8.5cm;
-        height: 8.5cm;
-        object-fit: cover;
-        transition: opacity 0.3s ease, border 0.3s ease;
-        border: 5px solid white;
-        box-shadow: 0 0 20px white;
-    }
-
     .welcome-message {
         font-size: 36px;
         font-weight: bold;
         text-transform: uppercase;
-        margin-bottom: 20px; /* Tách với đoạn giới thiệu link */
+        margin-bottom: 20px; /* Khoảng cách với avatar */
+        margin-top: 0; /* Nếu không muốn khoảng trống phía trên */
+    }
+
+    header img {
+        border-radius: 50%;
+        margin-top: 20px; /* Khoảng cách phía trên avatar */
+        width: 8.5cm;
+        height: 8.5cm;
+        object-fit: cover;
+        border: 5px solid white;
+        box-shadow: 0 0 20px white;
     }
 
     .intro-links {
         font-size: 20px;
-        margin-bottom: 20px; /* Tách với chữ NEM */
+        margin-top: 20px; /* Tách với avatar */
+        margin-bottom: 20px; /* Tách với chữ "NEM" */
     }
 
     .username {
         font-size: 40px;
         font-weight: bold;
+        margin-top: 20px; /* Tách khỏi phần trên */
     }
-
         header p {
             margin-top: 5px;
             font-size: 16px;
@@ -370,16 +370,27 @@
     </style>
 </head>
 <body>
-  <header>
-    <div class="about-me-icons">
-        <i class="fa-solid fa-heart heart"></i>
-        <span class="dots">...</span>
-    </div>
+<script>
+    const text = "Nem";
+    let index = 0;
+
+    function animateTitle() {
+      if (index <= text.length) {
+        document.title = text.slice(0, index); // Cập nhật nội dung của title
+        index++;
+        setTimeout(animateTitle, 500); // Điều chỉnh thời gian giữa các ký tự
+      }
+    }
+
+    // Bắt đầu animation sau khi trang load
+    window.onload = animateTitle;
+  </script>
+ <header>
     <div class="content-container">
-        <!-- Avatar -->
-        <img src="images/chosocoolface.jpg" alt="Profile Picture">
         <!-- Welcome message -->
         <p class="welcome-message">Welcome to Nem Profile</p>
+        <!-- Avatar -->
+        <img src="images/chosocoolface.jpg" alt="Profile Picture">
         <!-- Links introduction -->
         <p class="intro-links">Here, you'll find my links: YouTube, Spotify, Discord Server</p>
         <!-- Username -->
