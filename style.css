@@ -6,14 +6,14 @@ body {
     margin: 0;
     padding: 0;
     color: white;
-    transition: background-color 1s, color 1s; /* Thêm hiệu ứng chuyển màu */
+    transition: background-color 1s, color 1s;
 }
 
 /* Giao diện Header */
 header {
     background-color: #333;
     padding: 1em 0;
-    animation: glow-animation 3s infinite alternate; /* Thêm hiệu ứng sáng tối cho header */
+    animation: glow-animation 3s infinite alternate;
 }
 
 header h1 {
@@ -29,7 +29,7 @@ header img {
     transition: opacity 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
     border: 2mm solid white;
     padding: 1cm;
-    animation: glow-animation 2s infinite; /* Thêm hiệu ứng sáng tối */
+    animation: glow-animation 2s infinite;
 }
 
 @keyframes glow-animation {
