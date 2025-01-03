@@ -104,8 +104,8 @@
 
         .playlist-container li {
             position: relative;
-            width: 20cm; /* Increased size */
-            height: 8cm; /* Adjusted to rectangular shape */
+            width: 25cm; /* Larger size */
+            height: 10cm; /* Adjusted to rectangular shape */
             background-color: rgba(128, 128, 128, 0.5);
             border-radius: 20px; /* Rounded corners */
             overflow: hidden;
@@ -213,6 +213,18 @@
                 margin: 10px 0;
             }
         }
+
+        /* Playlist effect for shrink and grow */
+        .playlist-container li:hover {
+            transform: scale(0.1); /* Shrink to 1% */
+            opacity: 1; /* Keep visible */
+        }
+
+        .playlist-container li:active {
+            transform: scale(1); /* Return to original size */
+            opacity: 1; /* Keep visible */
+            background-color: white; /* Apply 50% white effect */
+        }
     </style>
 </head>
 <body>
@@ -242,18 +254,7 @@
             </a>
         </div>
     </section>
-    <section>
-        <h2 style="text-align: center; margin-top: 20px;">Riot Games Stats</h2>
-        <p style="text-align: center;">Watch me on:</p>
-        <div class="icon-container">
-            <a href="https://tracker.gg/valorant/profile/riot/Hatsune%20Miku%23nem/overview" target="_blank">
-                <img src="images/Valorant.png" alt="Valorant Icon"> Valorant Stats
-            </a>
-            <a href="https://tracker.gg/tft/profile/riot/Hatsune%20Miku%23nem/overview" target="_blank">
-                <img src="images/tft.jpg" alt="TFT Icon"> Teamfight Tactics Stats
-            </a>
-        </div>
-    </section>
+
     <section>
         <h2 style="text-align: center; margin-top: 20px;">My Favorite Playlists</h2>
         <p style="text-align: center;">Listen to my playlists:</p>
