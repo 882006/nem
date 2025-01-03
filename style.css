@@ -1,4 +1,4 @@
-/* Phần CSS được cập nhật */
+/* Phần CSS cập nhật */
 body {
     font-family: Arial, sans-serif;
     text-align: center;
@@ -20,16 +20,15 @@ header h1 {
 header img {
     border-radius: 50%;
     margin-top: 10px;
-    width: 6cm;  /* Tăng kích thước avatar */
+    width: 6cm;
     height: 6cm;
     object-fit: cover;
     transition: opacity 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
-    border: 2mm solid white;  /* Thu nhỏ viền avatar */
-    padding: 1cm; /* Khoảng cách giữa ảnh và viền */
-    animation: glow-animation 2s infinite; /* Thêm hiệu ứng sáng tối */
+    border: 2mm solid white;
+    padding: 1cm;
+    animation: glow-animation 2s infinite;
 }
 
-/* Hiệu ứng sáng lên và tối dần của Avatar */
 @keyframes glow-animation {
     0% {
         opacity: 0.7;
@@ -45,26 +44,23 @@ header img {
     }
 }
 
-/* Khi hover vào avatar */
 header img:hover {
     opacity: 0.5;
-    box-shadow: 0 0 30px rgba(255, 255, 255, 0.5); /* Sáng lên khi hover */
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
 }
 
-/* Viền xung quanh avatar khi click */
 header img:active {
     opacity: 0.6;
-    border: 5mm solid #ff00ff; /* Viền màu tím khi click */
+    border: 5mm solid #ff00ff;
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
 }
 
 .about-me-icons .dots {
-    font-size: 30px; /* Tăng kích thước dấu ba chấm */
+    font-size: 30px;
     color: white;
-    animation: dots-animation 1.5s infinite; /* Cập nhật thời gian cho dấu ba chấm */
+    animation: dots-animation 1.5s infinite;
 }
 
-/* Hiệu ứng dấu ba chấm */
 @keyframes dots-animation {
     0% { content: '.'; }
     33% { content: '..'; }
@@ -87,16 +83,14 @@ header img:active {
 .playlist-container {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 10px;
     margin-top: 30px;
     flex-wrap: wrap;
-    justify-content: space-around;
 }
 
-/* Điều chỉnh kích thước của các iframe để chúng đồng đều */
 .playlist-container li {
-    width: 320px;
-    height: 250px;
+    width: 300px;
+    height: 200px;
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 15px;
     overflow: hidden;
@@ -130,14 +124,12 @@ footer {
     color: #555;
 }
 
-/* Cập nhật phần Valorant và TFT Stats */
 .stats-container iframe {
     width: 100%;
     height: 500px;
     border: none;
 }
 
-/* Cập nhật cho các phần tử đứng ngang nhau */
 @media (max-width: 768px) {
     .playlist-container {
         flex-direction: column;
