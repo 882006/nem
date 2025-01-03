@@ -299,6 +299,12 @@
         .about-me-icons .dots {
             font-size: 20px;
             color: white;
+            position: relative;
+            display: inline-block;
+        }
+
+        .about-me-icons .dots::before {
+            content: '.';
             animation: dots-animation 2s steps(5, end) infinite;
         }
 
@@ -312,116 +318,65 @@
         }
 
         @keyframes dots-animation {
-            0% { content: ''; }
-            25% { content: '.'; }
-            50% { content: '..'; }
-            75% { content: '...'; }
-            100% { content: '...'; }
-        }
-
-        @media (max-width: 768px) {
-            .icon-container {
-                flex-direction: column;
-                gap: 2cm;
+            0% {
+                content: '.';
             }
-
-            .playlist-container {
-                flex-direction: column;
-                align-items: center;
+            25% {
+                content: '..';
             }
-
-            .playlist-container li {
-                width: 90%;
-                height: 300px;
-                margin: 10px 0;
+            50% {
+                content: '...';
             }
-
-            .games-container {
-                flex-direction: column;
-                align-items: center;
+            75% {
+                content: '..';
+            }
+            100% {
+                content: '.';
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="about-me-icons">
-            <i class="fa-solid fa-heart heart"></i>
-            <span class="dots">...</span>
-        </div>
-        <p class="welcome-message">Welcome to Nem Profile</p>
-        <img src="images/chosocoolface.jpg" alt="Profile Picture">
-        <p class="username">Nem</p>
-        <p style="font-size: 20px;">Here, you'll find my links: YouTube, Spotify, Discord Server</p>
-    </header>
-
-    <section>
-        <h2 style="text-align: center; margin-top: 20px;">Connect with Me</h2>
-        <p style="text-align: center;">Follow me on:</p>
-        <div class="icon-container">
-            <a href="https://www.youtube.com/@nemnuong" target="_blank">
-                <img src="images/Youtube.png" alt="YouTube Icon"> YouTube
-            </a>
-            <a href="https://open.spotify.com/user/31njaguxvody6xit6gajvngzhhe4?si=55bdc1bfb41c4cf0" target="_blank">
-                <img src="images/Spotify.png" alt="Spotify Icon"> Spotify
-            </a>
-            <a href="https://discord.gg/2zrethSUr9" target="_blank">
-                <img src="images/discord.jpg" alt="Discord Icon"> Discord Server
-            </a>
-        </div>
-    </section>
-
-    <section>
-        <h2 style="text-align: center; margin-top: 20px;">My Favorite Playlists</h2>
-        <p style="text-align: center;">Listen to my playlists:</p>
-        <ul class="playlist-container">
-            <li>
-                <a href="https://open.spotify.com/embed/playlist/37i9dQZF1E4xTpGY9MLJPI?utm_source=generator">
-                    <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1E4xTpGY9MLJPI?utm_source=generator" 
-                        width="100%" height="100%" frameBorder="0" allowfullscreen="" 
-                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    <div class="scroll-container">
+        <header>
+            <img src="https://i.imgur.com/59pRm36.png" alt="User Avatar">
+            <div class="username">Nem</div>
+            <h1>Welcome to my profile</h1>
+            <p>About Me</p>
+            <div class="icon-container">
+                <a href="https://www.youtube.com/user/username" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/1c/YouTube_Icon.png" alt="YouTube">
+                    <p>YouTube</p>
                 </a>
-            </li>
-            <li>
-                <a href="https://open.spotify.com/embed/playlist/0bTfvPdUr2wALFcCshXXqd?utm_source=generator">
-                    <iframe src="https://open.spotify.com/embed/playlist/0bTfvPdUr2wALFcCshXXqd?utm_source=generator" 
-                        width="100%" height="100%" frameBorder="0" allowfullscreen="" 
-                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                <a href="https://discord.com/users/username" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Discord_Logo_2021.png" alt="Discord">
+                    <p>Discord</p>
                 </a>
-            </li>
-        </ul>
-    </section>
+                <a href="https://open.spotify.com/user/username" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/0f/Spotify_Logo.png" alt="Spotify">
+                    <p>Spotify</p>
+                </a>
+            </div>
+        </header>
 
-    <section>
-        <h2 style="text-align: center; margin-top: 20px;">Games</h2>
-        <p style="text-align: center;">Track my gaming stats:</p>
         <div class="games-container">
             <div class="game-card">
-                <iframe src="https://tracker.gg/valorant/profile/riot/Hatsune%20Miku%23nem/overview" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/..."></iframe>
             </div>
             <div class="game-card">
-                <iframe src="https://tracker.gg/tft/profile/riot/Hatsune%20Miku%23nem/overview" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/..."></iframe>
             </div>
         </div>
-    </section>
 
-    <footer> 
-        <p>© 2025 by Nem. Created with GitHub Pages.</p>
-    </footer>
-
-    <div class="profile-review">
-        <i class="fa-solid fa-eye"></i> Page Review: <span id="view-count">0</span>
+        <footer>
+            <div class="profile-review">
+                <i class="fas fa-heart"></i> Profile review
+            </div>
+            <div class="about-me-icons">
+                <div class="heart"><i class="fas fa-heart"></i></div>
+                <div class="dots"><span class="dots"></span></div>
+            </div>
+        </footer>
     </div>
-
-    <script>
-        let viewCount = localStorage.getItem('view-count');
-        if (!viewCount) {
-            viewCount = 0;
-        }
-        viewCount++;
-        localStorage.setItem('view-count', viewCount);
-        document.getElementById('view-count').textContent = viewCount;
-    </script>
 </body>
 </html>
-
