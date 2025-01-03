@@ -13,6 +13,18 @@
             background-color: #000000;
             color: white;
             border: 10px solid white; /* Outer border for the webpage */
+            animation: border-glow 3s infinite alternate;
+        }
+
+        @keyframes border-glow {
+            0% {
+                border-color: white;
+                box-shadow: 0 0 10px white;
+            }
+            100% {
+                border-color: gray;
+                box-shadow: 0 0 30px gray;
+            }
         }
 
         header {
@@ -25,17 +37,18 @@
         header img {
             border-radius: 50%;
             margin-top: 10px;
-            width: 5.4cm; /* Reduced size by 2 cm */
-            height: 5.4cm; /* Reduced size by 2 cm */
+            width: 5.4cm;
+            height: 5.4cm;
             object-fit: cover;
             transition: opacity 0.3s ease, border 0.3s ease;
-            border: 3px solid white; /* White border around profile picture */
-            padding: 1cm; /* Space between profile image and border */
+            border: 3px solid white;
+            padding: 1cm;
+            box-sizing: border-box;
         }
 
         header img:active {
             opacity: 0.5;
-            border: 8mm solid white; /* Border expands by 50mm (8mm is equivalent to 50px) */
+            border: 8mm solid white;
         }
 
         header h1 {
@@ -58,6 +71,7 @@
             font-size: 26px;
             font-weight: bold;
             margin-top: 1cm;
+            display: inline-block;
         }
 
         .icon-container {
@@ -99,16 +113,16 @@
             display: flex;
             justify-content: center;
             margin-top: 30px;
-            gap: 2cm; /* Spaced 2cm apart */
+            gap: 0.5cm;
             flex-wrap: wrap;
         }
 
         .playlist-container li {
             position: relative;
-            width: 25cm; /* Larger size */
-            height: 10cm; /* Adjusted to rectangular shape */
+            width: 9.5cm;
+            height: 9.5cm;
             background-color: rgba(128, 128, 128, 0.5);
-            border-radius: 20px; /* Rounded corners */
+            border-radius: 15px;
             overflow: hidden;
             margin: 10px;
             transition: transform 0.3s ease, background-color 0.3s ease;
@@ -132,7 +146,38 @@
 
         .playlist-container li:hover {
             background-color: rgba(255, 255, 255, 0.5);
-            transform: scale(1.1); /* Normal hover effect */
+            transform: scale(1.1);
+        }
+
+        .games-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+            gap: 2cm;
+        }
+
+        .game-card {
+            width: 12cm;
+            height: 12cm;
+            background-color: rgba(128, 128, 128, 0.5);
+            border-radius: 50%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .game-card iframe {
+            width: 90%;
+            height: 90%;
+            border: none;
+            border-radius: 50%;
+        }
+
+        .game-card:hover {
+            background-color: rgba(255, 255, 255, 0.5);
+            transform: scale(1.1);
         }
 
         footer {
@@ -153,7 +198,7 @@
             align-items: center;
             justify-content: center;
             width: auto;
-            height: 0.8cm; /* Reduced height by 2cm */
+            height: 0.8cm;
             background-color: rgba(128, 128, 128, 0.5);
             border-radius: 5px;
             font-size: 12px;
@@ -179,7 +224,8 @@
         .about-me-icons .heart {
             font-size: 20px;
             margin-right: 5px;
-            color: black;
+            color: red;
+            animation: heart-beat 1s infinite alternate;
         }
 
         .about-me-icons .dots {
@@ -188,13 +234,20 @@
             animation: dots-animation 2s infinite;
         }
 
+        @keyframes heart-beat {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.2);
+            }
+        }
+
         @keyframes dots-animation {
-            0% { content: ''; }
-            20% { content: '.'; }
-            40% { content: '..'; }
-            60% { content: '...'; }
-            80% { content: '..'; }
-            100% { content: '.'; }
+            0%, 100% { content: ''; }
+            25% { content: '.'; }
+            50% { content: '..'; }
+            75% { content: '...'; }
         }
 
         @media (max-width: 768px) {
@@ -213,12 +266,11 @@
                 height: 300px;
                 margin: 10px 0;
             }
-        }
 
-        /* Playlist effect for shrink and grow */
-        .playlist-container li:hover {
-            transform: scale(1); /* Keep the size normal on hover */
-            opacity: 1;
+            .games-container {
+                flex-direction: column;
+                align-items: center;
+            }
         }
     </style>
 </head>
@@ -269,6 +321,19 @@
                 </a>
             </li>
         </ul>
+    </section>
+
+    <section>
+        <h2 style="text-align: center; margin-top: 20px;">Games</h2>
+        <p style="text-align: center;">Track my gaming stats:</p>
+        <div class="games-container">
+            <div class="game-card">
+                <iframe src="https://tracker.gg/valorant/profile/riot/Hatsune%20Miku%23nem/overview" allowfullscreen></iframe>
+            </div>
+            <div class="game-card">
+                <iframe src="https://tracker.gg/tft/profile/riot/Hatsune%20Miku%23nem/overview" allowfullscreen></iframe>
+            </div>
+        </div>
     </section>
 
     <footer> 
