@@ -23,38 +23,26 @@
         header img {
             border-radius: 50%;
             margin-top: 10px;
-            width: 6cm; /* Increased by 1cm (total of 5cm increase) */
-            height: 6cm; /* Increased by 1cm (total of 5cm increase) */
+            width: 6cm;
+            height: 6cm;
             object-fit: cover;
-            transition: opacity 0.3s ease;
-        }
-
-        header h1 {
-            margin-top: 15px;
-            font-size: 28px;
-        }
-
-        .username {
-            margin-top: 10px;
-            font-size: 30px; /* Increased size to 30px */
-            font-weight: bold;
-        }
-
-        header p {
-            margin-top: 5px;
-            font-size: 16px; /* Changed to 16px */
         }
 
         .welcome-message {
-            font-size: 26px; /* Increased size to 26px */
+            font-size: 26px;
             font-weight: bold;
-            margin-top: 1cm; /* Positioned above the profile image */
+            margin-top: 1cm;
+        }
+
+        .username {
+            font-size: 30px;
+            font-weight: bold;
         }
 
         .icon-container {
             display: flex;
             justify-content: center;
-            gap: 3cm; /* Reduced gap */
+            gap: 3cm;
             margin-top: 20px;
         }
 
@@ -62,13 +50,12 @@
             text-decoration: none;
             color: white;
             text-align: center;
-            font-size: 15px; /* Reduced size */
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            width: 175px; /* Increased size by 1cm */
-            height: 175px; /* Increased size by 1cm */
+            width: 175px;
+            height: 175px;
             background-color: rgba(128, 128, 128, 0.5);
             border-radius: 15%;
             overflow: hidden;
@@ -76,43 +63,26 @@
         }
 
         .icon-container a img {
-            width: 80%; /* Decreased by 2cm */
-            height: 80%; /* Decreased by 2cm */
+            width: 80%;
+            height: 80%;
             border-radius: 50%;
-        }
-
-        .icon-container a:hover {
-            background-color: rgba(255, 255, 255, 0.5);
-            transform: scale(1.2);
         }
 
         .playlist-container {
             display: flex;
             justify-content: center;
             margin-top: 30px;
-            gap: 3cm;
-            flex-wrap: wrap;
+            gap: 2cm; /* Giảm khoảng cách giữa các playlist */
         }
 
         .playlist-container li {
             position: relative;
-            width: 600px; /* Increased to fit the rounded rectangle */
-            height: 400px; /* Increased to fit */
+            width: 300px; /* Điều chỉnh kích thước cho playlist nhỏ hơn */
+            height: 400px;
             background-color: rgba(128, 128, 128, 0.5);
             border-radius: 12px;
             overflow: hidden;
-            margin: 10px;
             transition: transform 0.3s ease, background-color 0.3s ease;
-        }
-
-        .playlist-container li a {
-            display: block;
-            text-decoration: none;
-            text-align: center;
-            color: white;
-            font-weight: bold;
-            height: 100%;
-            width: 100%;
         }
 
         .playlist-container li iframe {
@@ -132,31 +102,26 @@
             padding: 10px;
             text-align: center;
             font-weight: bold;
-            font-size: 10px; /* Changed to 10px */
-            position: relative;
+            font-size: 10px;
         }
 
-      .profile-review {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 2cm; /* Adjusted to 2cm */
-    height: 2.5cm; /* Keep the current height */
-    background-color: rgba(128, 128, 128, 0.5);
-    border-radius: 15%;
-    font-size: 14px;
-    color: white;
-    padding: 10px;
-}
-{
+        .profile-review {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 2cm; /* Hình vuông cạnh 2cm */
+            height: 2cm;
+            background-color: rgba(128, 128, 128, 0.5);
+            border-radius: 15%;
+            font-size: 10px; /* Giảm kích thước chữ */
+            color: white;
         }
 
         .profile-review i {
             margin-right: 5px;
-            color: white;
         }
 
         @media (max-width: 768px) {
@@ -187,49 +152,15 @@
     </header>
 
     <section>
-        <h2 style="text-align: center; margin-top: 20px;">Connect with Me</h2>
-        <p style="text-align: center;">Follow me on:</p>
-        <div class="icon-container">
-            <a href="https://www.youtube.com/@nemnuong" target="_blank">
-                <img src="images/Youtube.png" alt="YouTube Icon"> YouTube
-            </a>
-            <a href="https://open.spotify.com/user/31njaguxvody6xit6gajvngzhhe4?si=55bdc1bfb41c4cf0" target="_blank">
-                <img src="images/Spotify.png" alt="Spotify Icon"> Spotify
-            </a>
-            <a href="https://discord.gg/2zrethSUr9" target="_blank">
-                <img src="images/discord.jpg" alt="Discord Icon"> Discord Server
-            </a>
-        </div>
-    </section>
-    <section>
-        <h2 style="text-align: center; margin-top: 20px;">Riot Games Stats</h2>
-        <p style="text-align: center;">Watch me on:</p>
-        <div class="icon-container">
-            <a href="https://tracker.gg/valorant/profile/riot/Hatsune%20Miku%23nem/overview" target="_blank">
-                <img src="images/Valorant.png" alt="Valorant Icon"> Valorant Stats
-            </a>
-            <a href="https://tracker.gg/tft/profile/riot/Hatsune%20Miku%23nem/overview" target="_blank">
-                <img src="images/tft.jpg" alt="TFT Icon"> Teamfight Tactics Stats
-            </a>
-        </div>
-    </section>
-    <section>
         <h2 style="text-align: center; margin-top: 20px;">My Favorite Playlists</h2>
-        <p style="text-align: center;">Listen to my playlists:</p>
         <ul class="playlist-container">
             <li>
-                <a href="https://open.spotify.com/embed/playlist/37i9dQZF1E4xTpGY9MLJPI?utm_source=generator">
-                    <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1E4xTpGY9MLJPI?utm_source=generator" 
-                        width="100%" height="100%" frameBorder="0" allowfullscreen="" 
-                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                </a>
+                <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1E4xTpGY9MLJPI?utm_source=generator"
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
             </li>
             <li>
-                <a href="https://open.spotify.com/embed/playlist/0bTfvPdUr2wALFcCshXXqd?utm_source=generator">
-                    <iframe src="https://open.spotify.com/embed/playlist/0bTfvPdUr2wALFcCshXXqd?utm_source=generator" 
-                        width="100%" height="100%" frameBorder="0" allowfullscreen="" 
-                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                </a>
+                <iframe src="https://open.spotify.com/embed/playlist/0bTfvPdUr2wALFcCshXXqd?utm_source=generator"
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
             </li>
         </ul>
     </section>
