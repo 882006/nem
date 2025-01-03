@@ -12,6 +12,7 @@
             padding: 0;
             background-color: #000000;
             color: white;
+            border: 10px solid white; /* Outer border for the webpage */
         }
 
         header {
@@ -24,17 +25,17 @@
         header img {
             border-radius: 50%;
             margin-top: 10px;
-            width: 6cm; /* Increased size */
-            height: 6cm; /* Increased size */
+            width: 5.4cm; /* Reduced size by 2 cm */
+            height: 5.4cm; /* Reduced size by 2 cm */
             object-fit: cover;
-            transition: opacity 0.3s ease;
+            transition: opacity 0.3s ease, border 0.3s ease;
             border: 3px solid white; /* White border around profile picture */
-            padding: 1cm; /* 1cm space between profile and the border */
+            padding: 1cm; /* Space between profile image and border */
         }
 
         header img:active {
             opacity: 0.5;
-            background-color: white;
+            border: 8mm solid white; /* Border expands by 50mm (8mm is equivalent to 50px) */
         }
 
         header h1 {
@@ -98,7 +99,7 @@
             display: flex;
             justify-content: center;
             margin-top: 30px;
-            gap: 3cm; /* Increased gap */
+            gap: 2cm; /* Spaced 2cm apart */
             flex-wrap: wrap;
         }
 
@@ -131,7 +132,7 @@
 
         .playlist-container li:hover {
             background-color: rgba(255, 255, 255, 0.5);
-            transform: scale(1.1);
+            transform: scale(1.1); /* Normal hover effect */
         }
 
         footer {
@@ -165,6 +166,7 @@
             color: white;
         }
 
+        /* About me Icons and Animation */
         .about-me-icons {
             position: absolute;
             top: 10px;
@@ -188,12 +190,18 @@
         }
 
         @keyframes dots-animation {
-            0% { content: ''; }
-            20% { content: '.'; }
-            40% { content: '..'; }
-            60% { content: '...'; }
-            80% { content: '..'; }
-            100% { content: '.'; }
+            0% {
+                content: '.';
+            }
+            33% {
+                content: '..';
+            }
+            66% {
+                content: '...';
+            }
+            100% {
+                content: '..';
+            }
         }
 
         @media (max-width: 768px) {
@@ -216,14 +224,8 @@
 
         /* Playlist effect for shrink and grow */
         .playlist-container li:hover {
-            transform: scale(0.1); /* Shrink to 1% */
-            opacity: 1; /* Keep visible */
-        }
-
-        .playlist-container li:active {
-            transform: scale(1); /* Return to original size */
-            opacity: 1; /* Keep visible */
-            background-color: white; /* Apply 50% white effect */
+            transform: scale(1); /* Keep the size normal on hover */
+            opacity: 1;
         }
     </style>
 </head>
@@ -231,7 +233,7 @@
     <header>
         <div class="about-me-icons">
             <i class="fa-solid fa-heart heart"></i>
-            <span class="dots">...</span>
+            <span class="dots">.</span>
         </div>
         <p class="welcome-message">Hello <3 Welcome to Nem Profile</p>
         <img src="images/chosocoolface.jpg" alt="Profile Picture">
@@ -294,3 +296,4 @@
     </script>
 </body>
 </html>
+
