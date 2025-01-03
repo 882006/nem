@@ -24,12 +24,17 @@
         header img {
             border-radius: 50%;
             margin-top: 10px;
-            width: 3cm; /* Reduced size */
-            height: 3cm; /* Reduced size */
+            width: 6cm; /* Increased size */
+            height: 6cm; /* Increased size */
             object-fit: cover;
             transition: opacity 0.3s ease;
             border: 3px solid white; /* White border around profile picture */
             padding: 1cm; /* 1cm space between profile and the border */
+        }
+
+        header img:active {
+            opacity: 0.5;
+            background-color: white;
         }
 
         header h1 {
@@ -93,16 +98,16 @@
             display: flex;
             justify-content: center;
             margin-top: 30px;
-            gap: 2cm;
+            gap: 3cm; /* Increased gap */
             flex-wrap: wrap;
         }
 
         .playlist-container li {
             position: relative;
-            width: 12cm; /* Increased size */
-            height: 6cm; /* Adjusted to rectangle shape */
+            width: 20cm; /* Increased size */
+            height: 8cm; /* Adjusted to rectangular shape */
             background-color: rgba(128, 128, 128, 0.5);
-            border-radius: 15px; /* Rounded corners */
+            border-radius: 20px; /* Rounded corners */
             overflow: hidden;
             margin: 10px;
             transition: transform 0.3s ease, background-color 0.3s ease;
@@ -288,4 +293,3 @@
     </script>
 </body>
 </html>
-
