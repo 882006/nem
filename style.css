@@ -150,10 +150,3 @@ footer {
         height: 450px;
     }
 }
-
-/* Hiệu ứng chuyển màu nền và văn bản */
-@keyframes color-change {
-    0% { background-color: #000000; color: white; }
-    50% { background-color: #ffffff; color: black; }
-    100% { background-color: #000000; color: white; }
-}
