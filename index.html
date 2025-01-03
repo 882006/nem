@@ -19,6 +19,7 @@
             background-color: #333;
             color: white;
             padding: 1em 0;
+            margin-bottom: 20px;
         }
 
         header h1 {
@@ -92,18 +93,19 @@
             margin: 10px 0;
         }
 
+        /* Phần Playlist */
         .playlist-container {
             display: flex;
-            justify-content: center;
+            justify-content: space-around;
             gap: 10px;
             margin-top: 30px;
             flex-wrap: wrap;
         }
 
-        /* Điều chỉnh kích thước của các iframe để chúng đồng đều */
+        /* Điều chỉnh kích thước của các iframe để chúng đồng đều và tròn */
         .playlist-container li {
-            width: 300px;
-            height: 200px;
+            width: 48%;
+            height: 300px;
             background-color: rgba(0, 0, 0, 0.5);
             border-radius: 15px;
             overflow: hidden;
@@ -128,20 +130,27 @@
         }
 
         .playlist-container li:hover {
-            transform: scale(1.1);
+            transform: scale(1.05);
             background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Phần Stats */
+        .stats-container {
+            display: flex;
+            justify-content: space-evenly;
+            margin-top: 30px;
+            gap: 20px;
+        }
+
+        .stats-container iframe {
+            width: 48%;
+            height: 500px;
+            border: none;
         }
 
         footer {
             margin-top: 2em;
             color: #555;
-        }
-
-        /* Cập nhật phần Valorant và TFT Stats */
-        .stats-container iframe {
-            width: 100%;
-            height: 500px;
-            border: none;
         }
 
         /* Cập nhật cho các phần tử đứng ngang nhau */
@@ -159,6 +168,7 @@
 
             .stats-container iframe {
                 height: 450px;
+                width: 100%;
             }
         }
     </style>
