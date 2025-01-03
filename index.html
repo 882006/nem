@@ -401,6 +401,16 @@
     // Bắt đầu animation sau khi trang load
     window.onload = animateTitle;
   </script>
+    <script>
+    function copyUsername() {
+        const username = "@nem_nuong.";
+        navigator.clipboard.writeText(username).then(() => {
+            alert(`Copied to clipboard: ${username}`);
+        }).catch(err => {
+            console.error("Failed to copy text: ", err);
+        });
+    }
+</script>
  <header>
     <div class="content-container">
         <!-- Welcome message -->
@@ -414,7 +424,7 @@
         <!-- Links introduction -->
         <p class="intro-links">Here, you'll find my links: YouTube, Spotify, Discord Server</p>
         <!-- Username -->
-        <p class="username">NEM</p>
+        <p class="username" id="username" onclick="copyUsername()">(@nem_nuong.)</p>
     </div>
 </header>
     <section>
