@@ -373,13 +373,29 @@
 <script>
     const text = "Nem";
     let index = 0;
+    let isReversing = false; // Biến kiểm tra trạng thái thu hồi
 
     function animateTitle() {
-      if (index <= text.length) {
-        document.title = text.slice(0, index); // Cập nhật nội dung của title
+      if (!isReversing && index <= text.length) {
+        // Khi đang tiến lên
+        document.title = text.slice(0, index);
         index++;
-        setTimeout(animateTitle, 500); // Điều chỉnh thời gian giữa các ký tự
+      } else if (isReversing && index >= 0) {
+        // Khi đang thu hồi
+        document.title = text.slice(0, index);
+        index--;
       }
+
+      // Đổi trạng thái khi đạt giới hạn
+      if (index > text.length) {
+        isReversing = true;
+        index--; // Bắt đầu thu hồi
+      } else if (index < 0) {
+        isReversing = false;
+        index++; // Bắt đầu lại
+      }
+
+      setTimeout(animateTitle, 500); // Điều chỉnh thời gian giữa các ký tự
     }
 
     // Bắt đầu animation sau khi trang load
