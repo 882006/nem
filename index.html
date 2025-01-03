@@ -127,15 +127,41 @@
             font-size: 28px;
         }
 
-        .username {
-            margin-top: 20px;
-            font-size: 40px; /* Increased font size */
-            font-weight: bold;
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%); /* Đặt giữa */
-            top: 10.5cm; /* Di chuyển xuống dưới avatar */
-        }
+      header .content-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    header img {
+        border-radius: 50%;
+        margin-top: 1cm; /* Khoảng cách phía trên */
+        margin-bottom: 20px; /* Khoảng cách phía dưới để tách Welcome Message */
+        width: 8.5cm;
+        height: 8.5cm;
+        object-fit: cover;
+        transition: opacity 0.3s ease, border 0.3s ease;
+        border: 5px solid white;
+        box-shadow: 0 0 20px white;
+    }
+
+    .welcome-message {
+        font-size: 36px;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-bottom: 20px; /* Tách với đoạn giới thiệu link */
+    }
+
+    .intro-links {
+        font-size: 20px;
+        margin-bottom: 20px; /* Tách với chữ NEM */
+    }
+
+    .username {
+        font-size: 40px;
+        font-weight: bold;
+    }
 
         header p {
             margin-top: 5px;
@@ -351,16 +377,15 @@
     </div>
     <div class="content-container">
         <!-- Avatar -->
-        <img src="images/chosocoolface.jpg" alt="Profile Picture" style="margin-bottom: 20px;"> 
+        <img src="images/chosocoolface.jpg" alt="Profile Picture">
         <!-- Welcome message -->
-        <p class="welcome-message" style="font-size: 36px; text-transform: uppercase; margin-bottom: 20px;">Welcome to Nem Profile</p>
+        <p class="welcome-message">Welcome to Nem Profile</p>
         <!-- Links introduction -->
-        <p style="font-size: 20px; margin-bottom: 20px;">Here, you'll find my links: YouTube, Spotify, Discord Server</p>
+        <p class="intro-links">Here, you'll find my links: YouTube, Spotify, Discord Server</p>
         <!-- Username -->
-        <p class="username" style="font-size: 40px;">NEM</p>
+        <p class="username">NEM</p>
     </div>
 </header>
-
     <section>
         <h2 style="text-align: center; margin-top: 20px;">Connect with Me</h2>
         <p style="text-align: center;">Follow me on:</p>
