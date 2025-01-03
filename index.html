@@ -47,15 +47,15 @@
 
         header img {
             border-radius: 50%;
-            margin-top: 1cm; /* 1cm distance from welcome message */
-            width: 7cm; /* Increased size */
-            height: 7cm; /* Increased size */
+            margin-top: 1cm; /* Increased margin-top */
+            width: 8.5cm; /* Increased size */
+            height: 8.5cm; /* Increased size */
             object-fit: cover;
             transition: opacity 0.3s ease, border 0.3s ease;
             border: 5px solid white; /* Increased border thickness */
             padding: 1cm;
             box-sizing: border-box;
-            box-shadow: 0 0 15px white; /* Added glowing effect */
+            box-shadow: 0 0 20px white; /* Increased glowing effect */
         }
 
         header img:active {
@@ -70,8 +70,11 @@
 
         .username {
             margin-top: 10px;
-            font-size: 30px; /* Increased font size */
+            font-size: 40px; /* Increased font size */
             font-weight: bold;
+            position: absolute;
+            left: 2.5cm; /* Position it to the left of the image */
+            top: 4cm; /* Adjust its position vertically */
         }
 
         header p {
