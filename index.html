@@ -367,9 +367,58 @@
                 align-items: center;
             }
         }
+/* Overlay styles */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Màu nền mờ */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999; /* Đảm bảo luôn nằm trên các phần tử khác */
+}
+
+.overlay-content {
+    text-align: center;
+    color: white;
+    font-size: 24px;
+}
+
+#enter-button {
+    padding: 10px 20px;
+    font-size: 20px;
+    color: white;
+    background-color: #444;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+#enter-button:hover {
+    background-color: white;
+    color: black;
+}
     </style>
 </head>
 <body>
+    <audio id="background-music" autoplay loop>
+    <source src="path-to-your-music.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+    </audio>
+<script>
+    <button id="play-music">Play Music</button>
+<button id="pause-music">Pause Music</button>
+
+<script>
+    const music = document.getElementById("background-music");
+    document.getElementById("play-music").addEventListener("click", () => music.play());
+    document.getElementById("pause-music").addEventListener("click", () => music.pause());
+</script>
 <script>
     const text = "Nem";
     let index = 0;
@@ -423,6 +472,13 @@
         <p class="intro-links">Here, you'll find my links: YouTube, Spotify, Discord Server</p>
         <!-- Username -->
         <p class="username" id="username" onclick="copyUsername()">@nem_nuong.</p>
+<!-- Overlay -->
+<div id="overlay">
+    <div class="overlay-content">
+        <p>Welcome to Nem's Profile!</p>
+        <button id="enter-button">Click to Enter</button>
+    </div>
+</div>
     </div>
 </header>
     <section>
@@ -440,7 +496,6 @@
             </a>
         </div>
     </section>
-
     <section>
         <h2 style="text-align: center; margin-top: 20px;">My Favorite Playlists</h2>
         <p style="text-align: center;">Listen to my playlists:</p>
@@ -461,7 +516,6 @@
             </li>
         </ul>
     </section>
-
     <section>
         <h2 style="text-align: center; margin-top: 20px;">Games</h2>
         <p style="text-align: center;">Track my gaming stats:</p>
@@ -474,15 +528,12 @@
             </div>
         </div>
     </section>
-
     <footer> 
         <p>© 2025 by Nem. Created with GitHub Pages.</p>
     </footer>
-
     <div class="profile-review">
         <i class="fa-solid fa-eye"></i> Page Review: <span id="view-count">0</span>
     </div>
-
     <script>
         let viewCount = localStorage.getItem('view-count');
         if (!viewCount) {
@@ -492,5 +543,10 @@
         localStorage.setItem('view-count', viewCount);
         document.getElementById('view-count').textContent = viewCount;
     </script>
+    <script>
+document.getElementById("enter-button").addEventListener("click", function () {
+    document.getElementById("overlay").style.display = "none"; // Ẩn lớp overlay
+});
+</script>
 </body>
 </html>
