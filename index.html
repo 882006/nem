@@ -18,6 +18,60 @@
             text-align: center;
             padding: 20px;
             background-color: #000000;
+            position: relative;
+        }
+
+        .welcome-icons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+        }
+
+        .welcome-icons .heart-icon {
+            font-size: 20px;
+            color: black;
+        }
+
+        .welcome-icons .dots-icon {
+            font-size: 20px;
+            color: white;
+            animation: dots-animation 1.5s infinite steps(1);
+        }
+
+        @keyframes dots-animation {
+            0% { content: ""; }
+            33% { content: "."; }
+            66% { content: ".."; }
+            100% { content: "..."; }
+        }
+
+        .profile-review {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 6cm;
+            height: 1cm;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(128, 128, 128, 0.5);
+            border-radius: 15px;
+            font-size: 14px;
+            color: white;
+        }
+
+        .profile-review i {
+            margin-right: 5px;
+        }
+
+        .welcome-message {
+            font-size: 26px;
+            font-weight: bold;
+            margin-top: 1cm;
         }
 
         header img {
@@ -28,15 +82,13 @@
             object-fit: cover;
         }
 
-        .welcome-message {
-            font-size: 26px;
-            font-weight: bold;
-            margin-top: 1cm;
-        }
-
         .username {
             font-size: 30px;
             font-weight: bold;
+        }
+
+        header p {
+            font-size: 16px;
         }
 
         .icon-container {
@@ -68,32 +120,9 @@
             border-radius: 50%;
         }
 
-        .playlist-container {
-            display: flex;
-            justify-content: center;
-            margin-top: 30px;
-            gap: 2cm; /* Giảm khoảng cách giữa các playlist */
-        }
-
-        .playlist-container li {
-            position: relative;
-            width: 300px; /* Điều chỉnh kích thước cho playlist nhỏ hơn */
-            height: 400px;
-            background-color: rgba(128, 128, 128, 0.5);
-            border-radius: 12px;
-            overflow: hidden;
-            transition: transform 0.3s ease, background-color 0.3s ease;
-        }
-
-        .playlist-container li iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        .playlist-container li:hover {
+        .icon-container a:hover {
             background-color: rgba(255, 255, 255, 0.5);
-            transform: scale(1.1);
+            transform: scale(1.2);
         }
 
         footer {
@@ -105,46 +134,23 @@
             font-size: 10px;
         }
 
-        .profile-review {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 2cm; /* Hình vuông cạnh 2cm */
-            height: 2cm;
-            background-color: rgba(128, 128, 128, 0.5);
-            border-radius: 15%;
-            font-size: 10px; /* Giảm kích thước chữ */
-            color: white;
-        }
-
-        .profile-review i {
-            margin-right: 5px;
-        }
-
         @media (max-width: 768px) {
             .icon-container {
                 flex-direction: column;
                 gap: 2cm;
-            }
-
-            .playlist-container {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .playlist-container li {
-                width: 90%;
-                height: 300px;
-                margin: 10px 0;
             }
         }
     </style>
 </head>
 <body>
     <header>
+        <div class="welcome-icons">
+            <i class="fas fa-heart heart-icon"></i>
+            <span class="dots-icon">...</span>
+        </div>
+        <div class="profile-review">
+            <i class="fa-solid fa-eye"></i> Page Review: <span id="view-count">0</span>
+        </div>
         <p class="welcome-message">Hello <3 Welcome to Nem Profile</p>
         <img src="images/chosocoolface.jpg" alt="Profile Picture">
         <p class="username">Nem</p>
@@ -152,25 +158,24 @@
     </header>
 
     <section>
-        <h2 style="text-align: center; margin-top: 20px;">My Favorite Playlists</h2>
-        <ul class="playlist-container">
-            <li>
-                <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1E4xTpGY9MLJPI?utm_source=generator"
-                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-            </li>
-            <li>
-                <iframe src="https://open.spotify.com/embed/playlist/0bTfvPdUr2wALFcCshXXqd?utm_source=generator"
-                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-            </li>
-        </ul>
+        <h2 style="text-align: center; margin-top: 20px;">Connect with Me</h2>
+        <p style="text-align: center;">Follow me on:</p>
+        <div class="icon-container">
+            <a href="https://www.youtube.com/@nemnuong" target="_blank">
+                <img src="images/Youtube.png" alt="YouTube Icon"> YouTube
+            </a>
+            <a href="https://open.spotify.com/user/31njaguxvody6xit6gajvngzhhe4?si=55bdc1bfb41c4cf0" target="_blank">
+                <img src="images/Spotify.png" alt="Spotify Icon"> Spotify
+            </a>
+            <a href="https://discord.gg/2zrethSUr9" target="_blank">
+                <img src="images/discord.jpg" alt="Discord Icon"> Discord Server
+            </a>
+        </div>
     </section>
+
     <footer> 
         <p>© 2025 by Nem. Created with GitHub Pages.</p>
     </footer>
-
-    <div class="profile-review">
-        <i class="fa-solid fa-eye"></i> Page Review: <span id="view-count">0</span>
-    </div>
 
     <script>
         let viewCount = localStorage.getItem('view-count');
