@@ -1,3 +1,4 @@
+/* Phần CSS được cập nhật */
 body {
     font-family: Arial, sans-serif;
     text-align: center;
@@ -5,33 +6,72 @@ body {
     margin: 0;
     padding: 0;
 }
+
 header {
     background-color: #333;
     color: white;
     padding: 1em 0;
 }
+
 header h1 {
     margin: 0;
 }
-ul {
-    list-style: none;
-    padding: 0;
+
+header img {
+    border-radius: 50%;
+    margin-top: 10px;
+    width: 6cm;  /* Tăng kích thước avatar */
+    height: 6cm;
+    object-fit: cover;
+    transition: opacity 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
+    border: 2mm solid white;  /* Thu nhỏ viền avatar */
+    padding: 1cm; /* Khoảng cách giữa ảnh và viền */
+    animation: glow-animation 2s infinite; /* Thêm hiệu ứng sáng tối */
 }
-ul li {
-    margin: 0.5em 0;
+
+/* Hiệu ứng sáng lên và tối dần của Avatar */
+@keyframes glow-animation {
+    0% {
+        opacity: 0.7;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    }
+    50% {
+        opacity: 1;
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+    }
+    100% {
+        opacity: 0.7;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    }
 }
-a {
-    text-decoration: none;
-    color: #007BFF;
+
+/* Khi hover vào avatar */
+header img:hover {
+    opacity: 0.5;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.5); /* Sáng lên khi hover */
 }
-a:hover {
-    text-decoration: underline;
+
+/* Viền xung quanh avatar khi click */
+header img:active {
+    opacity: 0.6;
+    border: 5mm solid #ff00ff; /* Viền màu tím khi click */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
 }
-footer {
-    margin-top: 2em;
-    color: #555;
+
+.about-me-icons .dots {
+    font-size: 30px; /* Tăng kích thước dấu ba chấm */
+    color: white;
+    animation: dots-animation 1.5s infinite; /* Cập nhật thời gian cho dấu ba chấm */
 }
-/* Cập nhật phần icon cho YouTube, Spotify, Discord */
+
+/* Hiệu ứng dấu ba chấm */
+@keyframes dots-animation {
+    0% { content: '.'; }
+    33% { content: '..'; }
+    66% { content: '...'; }
+    100% { content: '....'; }
+}
+
 .icon-container a {
     text-decoration: none;
     color: white;
@@ -39,40 +79,28 @@ footer {
     font-size: 14px;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Căn giữa các icon */
+    align-items: center;
     justify-content: center;
-    margin: 10px 0; /* Khoảng cách giữa các icon */
+    margin: 10px 0;
 }
 
-.icon-container a img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%; /* Đảm bảo icon là hình tròn */
-    object-fit: cover;
-    margin-bottom: 5px; /* Khoảng cách giữa icon và tên */
-}
-
-.icon-container a:hover {
-    transform: scale(1.1);
-    background-color: #ff6347;
-    padding: 5px;
-    border-radius: 12px;
-}
-
-/* Cập nhật cho phần playlist */
 .playlist-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 10px;
     margin-top: 30px;
+    flex-wrap: wrap;
 }
 
+/* Điều chỉnh kích thước của các iframe để chúng đồng đều */
 .playlist-container li {
-    width: 120px;
-    height: 120px;
-    transform: rotate(45deg); /* Xoay hình thoi */
+    width: 300px;
+    height: 200px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
     overflow: hidden;
-    background-color: rgba(0, 0, 0, 0.5); /* Màu nền xám mờ */
-    border-radius: 12px;
+    margin: 10px;
+    transition: transform 0.3s ease;
 }
 
 .playlist-container li a {
@@ -88,79 +116,40 @@ footer {
 .playlist-container li a iframe {
     width: 100%;
     height: 100%;
-    border-radius: 12px;
-    object-fit: cover;
+    border-radius: 15px;
 }
 
-.playlist-container li a:hover {
-    background-color: #ff6347;
+.playlist-container li:hover {
     transform: scale(1.1);
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
-/* Cập nhật cho phần Riot Games Stats */
-.icon-container a {
-    margin-bottom: 10px;
-}
-.about-me-icons {
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-    color: white;
+footer {
+    margin-top: 2em;
+    color: #555;
 }
 
-.about-me-icons .heart {
-    margin-right: 5px;
+/* Cập nhật phần Valorant và TFT Stats */
+.stats-container iframe {
+    width: 100%;
+    height: 500px;
+    border: none;
 }
 
-.about-me-icons .dots {
-    font-size: 20px;
-    color: white;
-    animation: dots-animation 2s infinite;
-}
+/* Cập nhật cho các phần tử đứng ngang nhau */
+@media (max-width: 768px) {
+    .playlist-container {
+        flex-direction: column;
+        align-items: center;
+    }
 
-/* Hiệu ứng dấu ba chấm (...) */
-@keyframes dots-animation {
-    0% { content: '.'; }
-    33% { content: '..'; }
-    66% { content: '...'; }
-    100% { content: '....'; }
-}
+    .playlist-container li {
+        width: 90%;
+        height: 300px;
+        margin: 10px 0;
+    }
 
-/* Phần tử chứa dấu ba chấm */
-.about-me-icons .dots {
-    font-size: 20px;
-    color: white;
-    animation: dots-animation 1s infinite;
+    .stats-container iframe {
+        height: 450px;
+    }
 }
-
-/* Phần viền avatar */
-header img {
-    border-radius: 50%;
-    margin-top: 10px;
-    width: 5.4cm;
-    height: 5.4cm;
-    object-fit: cover;
-    transition: opacity 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
-    border: 3px solid white; /* Viền trắng xung quanh avatar */
-    padding: 0.5cm; /* Khoảng cách giữa ảnh và viền */
-}
-
-/* Khi hover vào avatar */
-header img:hover {
-    opacity: 0.8;
-    border: 5mm solid #ff00ff; /* Viền màu tím khi hover */
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8); /* Hiệu ứng bóng đổ xung quanh avatar */
-}
-
-/* Viền xung quanh avatar thêm hiệu ứng */
-header img:active {
-    opacity: 0.6;
-    border: 8mm solid #ff00ff; /* Viền dày hơn khi click */
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8); /* Bóng đổ rõ hơn khi click */
-}
-
