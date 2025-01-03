@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About me</title>
+    <title>About Me</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
@@ -105,8 +105,8 @@
 
         .playlist-container li {
             position: relative;
-            width: 25cm; /* Larger size */
-            height: 10cm; /* Adjusted to rectangular shape */
+            width: 30%; /* Adjusted width for uniform size */
+            height: 300px; /* Set fixed height */
             background-color: rgba(128, 128, 128, 0.5);
             border-radius: 20px; /* Rounded corners */
             overflow: hidden;
@@ -191,16 +191,16 @@
 
         @keyframes dots-animation {
             0% {
-                content: '.'; 
+                content: '.';
             }
             33% {
-                content: '..'; 
+                content: '..';
             }
             66% {
-                content: '...'; 
+                content: '...';
             }
             100% {
-                content: '..'; 
+                content: '..';
             }
         }
 
@@ -235,6 +235,7 @@
             <i class="fa-solid fa-heart heart"></i>
             <span class="dots">.</span>
         </div>
+
         <p class="welcome-message">Hello <3 Welcome to Nem Profile</p>
         <img src="images/chosocoolface.jpg" alt="Profile Picture">
         <p class="username">Nem</p>
@@ -279,15 +280,18 @@
     </section>
 
     <section>
-        <h2 style="text-align: center;">My Stats</h2>
-        <p style="text-align: center;">Check out my game stats:</p>
-        <div class="icon-container">
-            <a href="https://tracker.gg/valorant/profile/riot/Hatsune%20Miku%23nem/overview" target="_blank">
-                <img src="images/Valorant.png" alt="Valorant Stats"> Valorant Stats
-            </a>
-            <a href="https://tracker.gg/tft/profile/riot/Hatsune%20Miku%23nem/overview" target="_blank">
-                <img src="images/TFT.png" alt="TFT Stats"> TFT Stats
-            </a>
+        <h2 style="text-align: center; margin-top: 20px;">Valorant Stats</h2>
+        <p style="text-align: center;">See my latest Valorant stats:</p>
+        <div style="text-align: center;">
+            <iframe src="https://tracker.gg/valorant" width="100%" height="400px" frameborder="0"></iframe>
+        </div>
+    </section>
+
+    <section>
+        <h2 style="text-align: center; margin-top: 20px;">TFT Stats</h2>
+        <p style="text-align: center;">Check out my latest TFT stats:</p>
+        <div style="text-align: center;">
+            <iframe src="https://tft.stats.com" width="100%" height="400px" frameborder="0"></iframe>
         </div>
     </section>
 
