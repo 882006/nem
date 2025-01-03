@@ -6,118 +6,109 @@
     <title>About Me</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+        /* Phần CSS được cập nhật */
         body {
             font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #000000;
             margin: 0;
             padding: 0;
-            background-color: #000000;
-            color: white;
-            border: 10px solid;
-            border-image: linear-gradient(45deg, red, yellow, green, blue, purple, red);
-            border-image-slice: 1;
-            transition: all 0.5s ease;
         }
 
         header {
-            text-align: center;
-            padding: 20px;
-            background-color: #000000;
-            position: relative;
-            transition: all 0.5s ease;
+            background-color: #333;
+            color: white;
+            padding: 1em 0;
+        }
+
+        header h1 {
+            margin: 0;
         }
 
         header img {
             border-radius: 50%;
             margin-top: 10px;
-            width: 5.4cm;
-            height: 5.4cm;
+            width: 6cm;  /* Tăng kích thước avatar */
+            height: 6cm;
             object-fit: cover;
             transition: opacity 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
-            border: 3mm solid white;
-            padding: 1cm;
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            border: 2mm solid white;  /* Thu nhỏ viền avatar */
+            padding: 1cm; /* Khoảng cách giữa ảnh và viền */
+            animation: glow-animation 2s infinite; /* Thêm hiệu ứng sáng tối */
         }
 
+        /* Hiệu ứng sáng lên và tối dần của Avatar */
+        @keyframes glow-animation {
+            0% {
+                opacity: 0.7;
+                box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+            }
+            50% {
+                opacity: 1;
+                box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+            }
+            100% {
+                opacity: 0.7;
+                box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+            }
+        }
+
+        /* Khi hover vào avatar */
+        header img:hover {
+            opacity: 0.5;
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.5); /* Sáng lên khi hover */
+        }
+
+        /* Viền xung quanh avatar khi click */
         header img:active {
-            opacity: 0.8;
-            border: 8mm solid white;
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+            opacity: 0.6;
+            border: 5mm solid #ff00ff; /* Viền màu tím khi click */
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
         }
 
-        header h1 {
-            margin-top: 15px;
-            font-size: 28px;
+        .about-me-icons .dots {
+            font-size: 30px; /* Tăng kích thước dấu ba chấm */
+            color: white;
+            animation: dots-animation 1.5s infinite; /* Cập nhật thời gian cho dấu ba chấm */
         }
 
-        .username {
-            margin-top: 10px;
-            font-size: 30px;
-            font-weight: bold;
-        }
-
-        header p {
-            margin-top: 5px;
-            font-size: 16px;
-        }
-
-        .welcome-message {
-            font-size: 26px;
-            font-weight: bold;
-            margin-top: 1cm;
-        }
-
-        .icon-container {
-            display: flex;
-            justify-content: center;
-            gap: 2cm;
-            margin-top: 20px;
+        /* Hiệu ứng dấu ba chấm */
+        @keyframes dots-animation {
+            0% { content: '.'; }
+            33% { content: '..'; }
+            66% { content: '...'; }
+            100% { content: '....'; }
         }
 
         .icon-container a {
             text-decoration: none;
             color: white;
             text-align: center;
-            font-size: 15px;
+            font-size: 14px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            width: 175px;
-            height: 175px;
-            background-color: rgba(128, 128, 128, 0.5);
-            border-radius: 15%;
-            overflow: hidden;
-            transition: transform 0.3s ease, background-color 0.3s ease;
-        }
-
-        .icon-container a img {
-            width: 80%;
-            height: 80%;
-            border-radius: 50%;
-        }
-
-        .icon-container a:hover {
-            background-color: rgba(255, 255, 255, 0.5);
-            transform: scale(1.2);
+            margin: 10px 0;
         }
 
         .playlist-container {
             display: flex;
             justify-content: center;
+            gap: 10px;
             margin-top: 30px;
-            gap: 0.5cm;
             flex-wrap: wrap;
         }
 
+        /* Điều chỉnh kích thước của các iframe để chúng đồng đều */
         .playlist-container li {
-            position: relative;
-            width: calc(33.33% - 20px);
-            height: 350px;
-            background-color: rgba(128, 128, 128, 0.5);
-            border-radius: 20px;
+            width: 300px;
+            height: 200px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 15px;
             overflow: hidden;
             margin: 10px;
-            transition: transform 0.3s ease, background-color 0.3s ease;
+            transition: transform 0.3s ease;
         }
 
         .playlist-container li a {
@@ -130,83 +121,31 @@
             width: 100%;
         }
 
-        .playlist-container li iframe {
+        .playlist-container li a iframe {
             width: 100%;
             height: 100%;
-            border: none;
+            border-radius: 15px;
         }
 
         .playlist-container li:hover {
-            background-color: rgba(255, 255, 255, 0.5);
             transform: scale(1.1);
+            background-color: rgba(255, 255, 255, 0.5);
         }
 
         footer {
-            background-color: #000000;
-            color: white;
-            padding: 10px;
-            text-align: center;
-            font-weight: bold;
-            font-size: 10px;
-            position: relative;
+            margin-top: 2em;
+            color: #555;
         }
 
-        .profile-review {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: auto;
-            height: 0.8cm;
-            background-color: rgba(128, 128, 128, 0.5);
-            border-radius: 5px;
-            font-size: 12px;
-            color: white;
-            padding: 5px 10px;
+        /* Cập nhật phần Valorant và TFT Stats */
+        .stats-container iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
         }
 
-        .profile-review i {
-            margin-right: 5px;
-            color: white;
-        }
-
-        .about-me-icons {
-            position: absolute;
-            top: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .about-me-icons .heart {
-            font-size: 20px;
-            margin-right: 5px;
-            color: black;
-        }
-
-        .about-me-icons .dots {
-            font-size: 20px;
-            color: white;
-            animation: dots-animation 1s infinite;
-        }
-
-        @keyframes dots-animation {
-            0% { content: '.'; }
-            33% { content: '..'; }
-            66% { content: '...'; }
-            100% { content: '....'; }
-        }
-
+        /* Cập nhật cho các phần tử đứng ngang nhau */
         @media (max-width: 768px) {
-            .icon-container {
-                flex-direction: column;
-                gap: 2cm;
-            }
-
             .playlist-container {
                 flex-direction: column;
                 align-items: center;
@@ -216,6 +155,10 @@
                 width: 90%;
                 height: 300px;
                 margin: 10px 0;
+            }
+
+            .stats-container iframe {
+                height: 450px;
             }
         }
     </style>
@@ -270,29 +213,21 @@
         </ul>
     </section>
 
-    <section>
+    <section class="stats-container">
         <h2 style="text-align: center; margin-top: 20px;">Valorant Stats</h2>
         <p style="text-align: center;">See my latest Valorant stats:</p>
-        <div style="text-align: center;">
-            <iframe src="https://tracker.gg/valorant/profile/riot/Hatsune%20Miku%23nem/overview" width="100%" height="500px" frameborder="0"></iframe>
-        </div>
+        <iframe src="https://tracker.gg/valorant/profile/riot/Hatsune%20Miku%23nem/overview"></iframe>
     </section>
 
-    <section>
+    <section class="stats-container">
         <h2 style="text-align: center; margin-top: 20px;">TFT Stats</h2>
         <p style="text-align: center;">Check out my latest TFT stats:</p>
-        <div style="text-align: center;">
-            <iframe src="https://tracker.gg/tft/profile/riot/Hatsune%20Miku%23nem/overview" width="100%" height="500px" frameborder="0"></iframe>
-        </div>
+        <iframe src="https://tracker.gg/tft/profile/riot/Hatsune%20Miku%23nem/overview"></iframe>
     </section>
 
-    <footer> 
+    <footer>
         <p>© 2025 by Nem. Created with GitHub Pages.</p>
     </footer>
-
-    <div class="profile-review">
-        <i class="fa-solid fa-eye"></i> Page Review: <span id="view-count">0</span>
-    </div>
 
     <script>
         let viewCount = localStorage.getItem('view-count');
