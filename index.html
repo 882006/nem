@@ -163,6 +163,34 @@
         box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
         background-color: rgba(255, 255, 255, 0.1); /* Hiệu ứng sáng nhẹ */
     }
+        .heart {
+    color: red;
+    font-size: 20px;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+.dots span {
+    animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
         header p {
             margin-top: 5px;
             font-size: 16px;
@@ -382,6 +410,10 @@
     <body>
  <script>
      
+     document.querySelector('.heart').addEventListener('click', function() {
+    this.classList.toggle('liked');
+});
+
      const audio = document.getElementById('background-music');
 const toggleButton = document.getElementById('toggle-music');
 
@@ -409,7 +441,7 @@ function typeEffect() {
 
 window.onload = typeEffect;
 
-   const text = "Nem🎵";
+   const text = "Nem";
 let index = 0;
 let isReversing = false; // Biến kiểm tra trạng thái thu hồi
 let originalTitle = document.title; // Lưu lại tiêu đề gốc
@@ -439,7 +471,7 @@ function animateTitle() {
     // Bắt đầu animation sau khi trang load
 window.onload = function() {
   animateTitle();
-  document.title = "Nem🎵"; // Đặt tiêu đề là "Nem" ngay khi trang load
+  document.title = "Nem"; // Đặt tiêu đề là "Nem" ngay khi trang load
 };
     // Bắt đầu animation sau khi trang load
     window.onload = animateTitle;
@@ -462,10 +494,10 @@ window.onload = function() {
                 notification.style.zIndex = "9999";
                 document.body.appendChild(notification);
 
-                // Ẩn thông báo sau 2 giây
+                // Ẩn thông báo sau 1 giây
                 setTimeout(() => {
                     document.body.removeChild(notification);
-                }, 2000);
+                }, 1000);
             })
             .catch(err => {
                 console.error("Failed to copy text: ", err);
@@ -487,7 +519,7 @@ document.title = originalTitle;
      
   </script>
  <header>
-    <h1><a href="#">Nem🎵</a></h1>
+    <h1><a href="#"></a></h1>
      <div style="text-align: center; margin-top: 10px;">
 </div>
      
@@ -500,15 +532,17 @@ document.title = originalTitle;
        <p class="welcome-message">
     Welcome to Nem Profile 
     <span class="heart">❤</span>
-    <span class="dots">...</span>
+<span class="dots">
+    <span>.</span><span>.</span><span>.</span>
+</span>
         </p>
+        
         <!-- Avatar -->
         <img src="images/chosocoolface.jpg" alt="Profile Picture">
         <!-- Links introduction -->
         <p class="intro-links">Here, you'll find my links: YouTube, Spotify, Discord Server</p>
         <!-- Username -->
        <p class="username" id="username" onclick="copyUsername()">@nem_nuong.</p>
-<audio id="background-music" src="nhacnen.mp4" loop></audio>
     </div>
 </header>
     <section>
