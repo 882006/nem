@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> </title>
+    <title>Nem🎵</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         /* Thêm custom scrollbar */
@@ -409,45 +409,41 @@
 </head>
     <body>
  <script>
+     // Nội dung gốc của tiêu đề
+const fullTitle = "Nem🎵";
+let currentTitle = fullTitle;
+let isShrinking = true; // Trạng thái rút gọn hay mở rộng
+
+function animateTitle() {
+    if (isShrinking) {
+        // Nếu đang rút gọn, cắt bớt 1 ký tự
+        currentTitle = currentTitle.slice(0, -1);
+        if (currentTitle.length === 0) {
+            // Khi rút gọn xong, đổi trạng thái
+            isShrinking = false;
+        }
+    } else {
+        // Nếu đang mở rộng, thêm lại ký tự từ tiêu đề gốc
+        currentTitle = fullTitle.slice(0, currentTitle.length + 1);
+        if (currentTitle === fullTitle) {
+            // Khi mở rộng xong, đổi trạng thái
+            isShrinking = true;
+        }
+    }
+    // Cập nhật tiêu đề
+    document.title = currentTitle;
+
+    // Lặp lại sau một khoảng thời gian
+    setTimeout(animateTitle, 300); // Điều chỉnh thời gian giữa mỗi bước
+}
+
+// Bắt đầu hiệu ứng
+animateTitle();
      
      document.querySelector('.heart').addEventListener('click', function() {
     this.classList.toggle('liked');
 });
 
-   const text = "Nem";
-let index = 0;
-let isReversing = false; // Biến kiểm tra trạng thái thu hồi
-let originalTitle = document.title; // Lưu lại tiêu đề gốc
-
-function animateTitle() {
-  if (!isReversing && index <= text.length) {
-    // Khi đang tiến lên
-    document.title = text.slice(0, index);
-    index++;
-  } else if (isReversing && index >= 0) {
-    // Khi đang thu hồi
-    document.title = text.slice(0, index);
-    index--;
-  }
-
-  // Đổi trạng thái khi đạt giới hạn
-  if (index > text.length) {
-    isReversing = true;
-    index--; // Bắt đầu thu hồi
-  } else if (index < 0) {
-    isReversing = false;
-    index++; // Bắt đầu lại
-  }
-
-  setTimeout(animateTitle, 500); // Điều chỉnh thời gian giữa các ký tự
-}
-    // Bắt đầu animation sau khi trang load
-window.onload = function() {
-  animateTitle();
-  document.title = "Nem"; // Đặt tiêu đề là "Nem" ngay khi trang load
-};
-    // Bắt đầu animation sau khi trang load
-    window.onload = animateTitle;
     function copyUsername() {
         const username = "@nem_nuong.";
         navigator.clipboard.writeText(username)
