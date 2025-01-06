@@ -381,6 +381,34 @@
 </head>
     <body>
  <script>
+     
+     const audio = document.getElementById('background-music');
+const toggleButton = document.getElementById('toggle-music');
+
+function toggleMusic() {
+    if (audio.paused) {
+        audio.play();
+        toggleButton.textContent = "🔇 Pause Music";
+    } else {
+        audio.pause();
+        toggleButton.textContent = "🔊 Play Music";
+    }
+}
+
+     const welcomeMessage = document.querySelector('.welcome-message');
+const text = "Welcome to Nem Profile ❤...";
+let i = 0;
+
+function typeEffect() {
+    if (i < text.length) {
+        welcomeMessage.textContent += text[i];
+        i++;
+        setTimeout(typeEffect, 100);
+    }
+}
+
+window.onload = typeEffect;
+
    const text = "Nem";
 let index = 0;
 let isReversing = false; // Biến kiểm tra trạng thái thu hồi
@@ -456,9 +484,17 @@ setTimeout(() => {
 
 // Đặt lại tiêu đề của trang
 document.title = originalTitle;
+     
   </script>
  <header>
     <h1><a href="#">Nem</a></h1>
+     <div style="text-align: center; margin-top: 10px;">
+</div>
+     
+    <div style="text-align: center; margin-top: 10px;">
+    <button id="toggle-music" onclick="toggleMusic()">🔊 Play Music</button>
+</div>
+
     <div class="content-container">
         <!-- Welcome message -->
        <p class="welcome-message">
@@ -540,6 +576,6 @@ document.title = originalTitle;
         localStorage.setItem('view-count', viewCount);
         document.getElementById('view-count').textContent = viewCount;
     </script>
-    
+        
 </body>
 </html>
