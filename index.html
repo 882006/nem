@@ -444,21 +444,13 @@
     </style>
 </head>
 <body>
-    <audio id="background-music" autoplay loop>
-    <source src="path-to-your-music.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-    </audio>
-<script>
-    <button id="play-music">Play Music</button>
-<button id="pause-music">Pause Music</button>
-
 <script>
     document.getElementById("enter-button").addEventListener("click", function () {
     // Ẩn lớp overlay
     document.getElementById("overlay").style.display = "none";
 
     // Phát nhạc nền
-    const audio = document.getElementById("background-music");
+    const audio = document.getElementById("cant-go.mp4");
     audio.play();
 });
 </script>
@@ -592,77 +584,5 @@
 document.getElementById("enter-button").addEventListener("click", function () {
     document.getElementById("overlay").style.display = "none"; // Ẩn lớp overlay
 });
-        
-<!-- Video Player -->
-<div class="video-container">
-    <video id="loop-video" autoplay loop muted>
-        <source src="video/cant-go.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-    <div class="controls">
-        <button id="play-pause-btn">Pause</button>
-        <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="1">
-    </div>
-</div>
-
-<style>
-    .video-container {
-        position: fixed;
-        top: 10px;
-        right: 10px;
-        width: 300px; /* Chiều rộng video */
-        z-index: 1000;
-        background: rgba(0, 0, 0, 0.7);
-        border-radius: 8px;
-        padding: 5px;
-    }
-
-    .video-container video {
-        width: 100%;
-        border-radius: 8px;
-    }
-
-    .controls {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-top: 5px;
-    }
-
-    .controls button {
-        background-color: #fff;
-        border: none;
-        border-radius: 4px;
-        padding: 5px 10px;
-        cursor: pointer;
-        font-size: 14px;
-    }
-
-    .controls input[type="range"] {
-        width: 100px;
-        cursor: pointer;
-    }
-</style>
-
-<script>
-    const video = document.getElementById('loop-video');
-    const playPauseBtn = document.getElementById('play-pause-btn');
-    const volumeSlider = document.getElementById('volume-slider');
-
-    playPauseBtn.addEventListener('click', () => {
-        if (video.paused) {
-            video.play();
-            playPauseBtn.textContent = 'Pause';
-        } else {
-            video.pause();
-            playPauseBtn.textContent = 'Play';
-        }
-    });
-
-    volumeSlider.addEventListener('input', (event) => {
-        video.volume = event.target.value;
-    });
-</script>
-    
 </body>
 </html>
