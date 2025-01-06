@@ -307,7 +307,6 @@
             justify-content: center;
         }
         
-
 /* Hiệu ứng nhấp nháy */
 @keyframes blink {
     0%, 100% {
@@ -372,8 +371,9 @@
         }
     </style>
 </head>
+    
 <body>
-<script>
+ <script>
     const text = "Nem";
     let index = 0;
     let isReversing = false; // Biến kiểm tra trạng thái thu hồi
@@ -476,13 +476,15 @@
             </div>
         </div>
     </section>
+    
     <footer> 
         <p>© 2025 by Nem. Created with GitHub Pages.</p>
     </footer>
+    
     <div class="profile-review">
         <i class="fa-solid fa-eye"></i> Page Review: <span id="view-count">0</span>
     </div>
-
+    
     <script>
         let viewCount = localStorage.getItem('view-count');
         if (!viewCount) {
@@ -492,9 +494,6 @@
         localStorage.setItem('view-count', viewCount);
         document.getElementById('view-count').textContent = viewCount;
     </script>
-    <script>
-document.getElementById("enter-button").addEventListener("click", function () {
-    document.getElementById("overlay").style.display = "none"; // Ẩn lớp overlay
-});
+    
 </body>
 </html>
