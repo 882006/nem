@@ -413,6 +413,34 @@
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); /* Hiệu ứng sáng trắng */
     transform: scale(1.1); /* Phóng to nhẹ */
 }
+        .background-music {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            background-color: #f0f0f0;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            transition: filter 0.3s;
+        }
+
+        .background-music:hover {
+            filter: brightness(1.5);
+        }
+
+        .volume-control {
+            margin-left: 10px;
+        }
+
+        .music-title {
+            margin-right: 10px;
+            font-weight: bold;
+            font-size: 1em;
+        }
+        
     </style>
 </head>
 <body>
