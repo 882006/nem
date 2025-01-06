@@ -247,4 +247,7 @@ header img:hover {
     50% { transform: translateX(5px); }
     75% { transform: translateX(-5px); }
 }
+.playlist-container li:hover, .game-card:hover {
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.5);
+}
 
