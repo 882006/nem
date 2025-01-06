@@ -229,3 +229,11 @@ html {
         transform: scale(1.2);
     }
 }
+/* Ẩn liên kết khi hiệu ứng đang chạy */
+header h1 a {
+    visibility: hidden; /* Ẩn liên kết */
+}
+
+header h1 a.effect-finished {
+    visibility: visible; /* Hiển thị lại liên kết sau khi hiệu ứng hoàn tất */
+}
