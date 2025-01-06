@@ -374,32 +374,34 @@
     
 <body>
  <script>
-    const text = "Nem";
-    let index = 0;
-    let isReversing = false; // Biến kiểm tra trạng thái thu hồi
+   const text = "Nem";
+let index = 0;
+let isReversing = false; // Biến kiểm tra trạng thái thu hồi
+let originalTitle = document.title; // Lưu lại tiêu đề gốc
 
-    function animateTitle() {
-      if (!isReversing && index <= text.length) {
-        // Khi đang tiến lên
-        document.title = text.slice(0, index);
-        index++;
-      } else if (isReversing && index >= 0) {
-        // Khi đang thu hồi
-        document.title = text.slice(0, index);
-        index--;
-      }
+function animateTitle() {
+  if (!isReversing && index <= text.length) {
+    // Khi đang tiến lên
+    document.title = text.slice(0, index);
+    index++;
+  } else if (isReversing && index >= 0) {
+    // Khi đang thu hồi
+    document.title = text.slice(0, index);
+    index--;
+  }
 
-      // Đổi trạng thái khi đạt giới hạn
-      if (index > text.length) {
-        isReversing = true;
-        index--; // Bắt đầu thu hồi
-      } else if (index < 0) {
-        isReversing = false;
-        index++; // Bắt đầu lại
-      }
+  // Đổi trạng thái khi đạt giới hạn
+  if (index > text.length) {
+    isReversing = true;
+    index--; // Bắt đầu thu hồi
+  } else if (index < 0) {
+    isReversing = false;
+    index++; // Bắt đầu lại
+  }
 
-      setTimeout(animateTitle, 500); // Điều chỉnh thời gian giữa các ký tự
-    }
+  setTimeout(animateTitle, 500); // Điều chỉnh thời gian giữa các ký tự
+}
+document.title = originalTitle; // Trở lại tiêu đề ban đầu khi hiệu ứng hoàn thành
 
     // Bắt đầu animation sau khi trang load
     window.onload = animateTitle;
