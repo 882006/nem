@@ -370,90 +370,9 @@
                 align-items: center;
             }
         }
-/* Overlay styles */
-#overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.9); /* Màu nền mờ */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 9999; /* Đảm bảo luôn nằm trên các phần tử khác */
-}
-
-/* Nội dung overlay */
-.overlay-content {
-    text-align: center;
-    color: white;
-    font-size: 40px;
-    line-height: 1.5;
-    padding: 20px;
-}
-
-/* Nút bấm */
-#enter-button {
-    padding: 20px 40px;
-    font-size: 24px;
-    color: white;
-    background-color: #444;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    margin-top: 30px;
-    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-}
-
-/* Hiệu ứng hover: sáng lên */
-#enter-button:hover {
-    background-color: white;
-    color: black;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); /* Hiệu ứng sáng trắng */
-    transform: scale(1.1); /* Phóng to nhẹ */
-}
-        .background-music {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            display: flex;
-            align-items: center;
-            background-color: #f0f0f0;
-            border: 2px solid #ccc;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            padding: 10px;
-            transition: filter 0.3s;
-        }
-
-        .background-music:hover {
-            filter: brightness(1.5);
-        }
-
-        .volume-control {
-            margin-left: 10px;
-        }
-
-        .music-title {
-            margin-right: 10px;
-            font-weight: bold;
-            font-size: 1em;
-        }
-        
     </style>
 </head>
 <body>
-<script>
-    document.getElementById("enter-button").addEventListener("click", function () {
-    // Ẩn lớp overlay
-    document.getElementById("overlay").style.display = "none";
-
-    // Phát nhạc nền
-    const audio = document.getElementById("cant-go.mp4");
-    audio.play();
-});
-</script>
 <script>
     const text = "Nem";
     let index = 0;
@@ -507,13 +426,6 @@
         <p class="intro-links">Here, you'll find my links: YouTube, Spotify, Discord Server</p>
         <!-- Username -->
         <p class="username" id="username" onclick="copyUsername()">@nem_nuong.</p>
-<!-- Overlay -->
-<div id="overlay">
-    <div class="overlay-content">
-        <p>Welcome to Nem's Profile!</p>
-        <button id="enter-button">Click to Enter</button>
-    </div>
-</div>
 <audio id="background-music" src="nhacnen.mp4" loop></audio>
     </div>
 </header>
