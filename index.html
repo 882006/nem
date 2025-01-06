@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🎵</title>
+    <title> 🎵 </title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         /* Thêm custom scrollbar */
@@ -25,24 +25,20 @@
         ::-webkit-scrollbar-thumb:hover {
             background-color: rgba(255, 255, 255, 0.8); /* Màu khi hover */
         }
-
         /* Thêm hiệu ứng mượt mà khi cuộn */
         html {
             scroll-behavior: smooth;
         }
-
         /* Đặt Scroll Snap cho phần cuộn */
         .scroll-container {
             height: 100vh; /* Chiều cao của khu vực cuộn */
             overflow-y: scroll;
             scroll-snap-type: y mandatory;
         }
-
         .scroll-section {
             scroll-snap-align: start;
             height: 100vh; /* Chiều cao mỗi phần */
         }
-
         /* Thêm custom scrollbar cho playlist container */
         .playlist-container {
             overflow-y: auto;
@@ -50,20 +46,16 @@
             padding-right: 15px;
             scroll-behavior: smooth;
         }
-
         .playlist-container::-webkit-scrollbar {
             width: 8px;
         }
-
         .playlist-container::-webkit-scrollbar-thumb {
             background-color: rgba(255, 255, 255, 0.6);
             border-radius: 5px;
         }
-
         .playlist-container::-webkit-scrollbar-thumb:hover {
             background-color: rgba(255, 255, 255, 0.8);
         }
-
         /* Styles for main page */
         body {
             font-family: Arial, sans-serif;
@@ -314,7 +306,61 @@
             align-items: center;
             justify-content: center;
         }
+        
+/* Phong cách cho "Nhạc Nền" */
+#nhac-nen-container {
+    position: fixed;
+    top: 20px; /* Đưa lên trên */
+    right: 20px; /* Căn phải */
+    text-align: center;
+    z-index: 10000;
+}
 
+#nhac-nen-label {
+    font-size: 18px;
+    color: white;
+    background: #222;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    animation: blink 1.5s infinite;
+    transition: all 0.3s ease;
+}
+
+#nhac-nen-label:hover {
+    border-color: white;
+    box-shadow: 0 0 10px white;
+}
+
+#toggle-music {
+    margin-top: 10px;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #444;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#toggle-music:hover {
+    background-color: white;
+    color: black;
+    transform: scale(1.1);
+}
+
+/* Hiệu ứng nhấp nháy */
+@keyframes blink {
+    0%, 100% {
+        background-color: #222;
+    }
+    50% {
+        background-color: #555;
+    }
+}
+        
         .about-me-icons .heart {
             font-size: 20px;
             margin-right: 5px;
@@ -547,6 +593,10 @@
     <div class="profile-review">
         <i class="fa-solid fa-eye"></i> Page Review: <span id="view-count">0</span>
     </div>
+    <div id="nhac-nen-container">
+    <p id="nhac-nen-label">Nhạc Nền 🎵</p>
+    <button id="toggle-music">⏯ Dừng/Chạy Nhạc</button>
+    </div>
     <script>
         let viewCount = localStorage.getItem('view-count');
         if (!viewCount) {
@@ -559,6 +609,47 @@
     <script>
 document.getElementById("enter-button").addEventListener("click", function () {
     document.getElementById("overlay").style.display = "none"; // Ẩn lớp overlay
+});
+</script>
+    
+    <script>
+// Thêm YouTube Iframe API
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+// Tạo player
+var player;
+function onYouTubeIframeAPIReady() {
+    player = new YT.Player('nhac-nen-container', {
+        height: '0', // Ẩn player
+        width: '0',  // Ẩn player
+        videoId: '1pquvJRgIMY', // Link YouTube video
+        playerVars: {
+            autoplay: 1,
+            loop: 1,
+            playlist: '1pquvJRgIMY',
+            controls: 0,
+            showinfo: 0,
+            modestbranding: 1,
+        },
+        events: {
+            onReady: function(event) {
+                event.target.setVolume(50); // Âm lượng 50%
+            }
+        }
+    });
+}
+// Dừng/Chạy nhạc
+var isPlaying = true; // Biến trạng thái nhạc
+document.getElementById('toggle-music').addEventListener('click', function () {
+    if (isPlaying) {
+        player.pauseVideo();
+    } else {
+        player.playVideo();
+    }
+    isPlaying = !isPlaying; // Đổi trạng thái
 });
 </script>
 </body>
