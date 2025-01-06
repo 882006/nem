@@ -593,10 +593,7 @@
     <div class="profile-review">
         <i class="fa-solid fa-eye"></i> Page Review: <span id="view-count">0</span>
     </div>
-    <div id="nhac-nen-container">
-    <p id="nhac-nen-label">Nhạc Nền 🎵</p>
-    <button id="toggle-music">⏯ Dừng/Chạy Nhạc</button>
-    </div>
+
     <script>
         let viewCount = localStorage.getItem('view-count');
         if (!viewCount) {
@@ -611,7 +608,10 @@ document.getElementById("enter-button").addEventListener("click", function () {
     document.getElementById("overlay").style.display = "none"; // Ẩn lớp overlay
 });
 </script>
-    
+    <div id="nhac-nen-container">
+    <p id="nhac-nen-label">Nhạc Nền 🎵</p>
+    <button id="toggle-music">⏯ Dừng/Chạy Nhạc</button>
+    </div>
     <script>
 // Thêm YouTube Iframe API
 var tag = document.createElement('script');
