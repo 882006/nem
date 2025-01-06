@@ -414,33 +414,6 @@
     this.classList.toggle('liked');
 });
 
-     const audio = document.getElementById('background-music');
-const toggleButton = document.getElementById('toggle-music');
-
-function toggleMusic() {
-    if (audio.paused) {
-        audio.play();
-        toggleButton.textContent = "🔇 Pause Music";
-    } else {
-        audio.pause();
-        toggleButton.textContent = "🔊 Play Music";
-    }
-}
-
-     const welcomeMessage = document.querySelector('.welcome-message');
-const text = "Welcome to Nem Profile ❤...";
-let i = 0;
-
-function typeEffect() {
-    if (i < text.length) {
-        welcomeMessage.textContent += text[i];
-        i++;
-        setTimeout(typeEffect, 100);
-    }
-}
-
-window.onload = typeEffect;
-
    const text = "Nem";
 let index = 0;
 let isReversing = false; // Biến kiểm tra trạng thái thu hồi
@@ -609,6 +582,34 @@ document.title = originalTitle;
         viewCount++;
         localStorage.setItem('view-count', viewCount);
         document.getElementById('view-count').textContent = viewCount;
+
+        const audio = document.getElementById('background-music');
+const toggleButton = document.getElementById('toggle-music');
+
+function toggleMusic() {
+    if (audio.paused) {
+        audio.play();
+        toggleButton.textContent = "🔇 Pause Music";
+    } else {
+        audio.pause();
+        toggleButton.textContent = "🔊 Play Music";
+    }
+}
+
+        const welcomeMessage = document.querySelector('.welcome-message');
+const text = "Welcome to Nem Profile ❤...";
+let i = 0;
+
+function typeEffect() {
+    if (i < text.length) {
+        welcomeMessage.textContent += text[i];
+        i++;
+        setTimeout(typeEffect, 100);
+    }
+}
+
+window.onload = typeEffect;
+
     </script>
         
 </body>
