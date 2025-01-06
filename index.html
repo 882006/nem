@@ -150,10 +150,18 @@
         margin-bottom: 20px; /* Tách với chữ "NEM" */
     }
 
-    .username {
+     .username {
         font-size: 40px;
         font-weight: bold;
-        margin-top: 20px; /* Tách khỏi phần trên */
+        margin-top: 20px;
+        cursor: pointer; /* Thêm con trỏ chuột */
+        padding: 5px;
+        transition: box-shadow 0.3s ease, background-color 0.3s ease;
+    }
+
+    .username:hover {
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        background-color: rgba(255, 255, 255, 0.1); /* Hiệu ứng sáng nhẹ */
     }
         header p {
             margin-top: 5px;
@@ -409,11 +417,31 @@ window.onload = function() {
     window.onload = animateTitle;
     function copyUsername() {
         const username = "@nem_nuong.";
-        navigator.clipboard.writeText(username).then(() => {
-            alert(`Copied to clipboard: ${username}`);
-        }).catch(err => {
-            console.error("Failed to copy text: ", err);
-        });
+        navigator.clipboard.writeText(username)
+            .then(() => {
+                // Tạo thông báo "Đã sao chép thành công"
+                const notification = document.createElement("div");
+                notification.textContent = "Đã sao chép thành công";
+                notification.style.position = "fixed";
+                notification.style.bottom = "20px";
+                notification.style.right = "20px";
+                notification.style.padding = "10px 20px";
+                notification.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
+                notification.style.color = "white";
+                notification.style.borderRadius = "5px";
+                notification.style.boxShadow = "0 0 10px rgba(255, 255, 255, 0.5)";
+                notification.style.fontSize = "14px";
+                notification.style.zIndex = "9999";
+                document.body.appendChild(notification);
+
+                // Ẩn thông báo sau 2 giây
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 2000);
+            })
+            .catch(err => {
+                console.error("Failed to copy text: ", err);
+            });
     }
      // Lấy phần tử Nem
 const nemElement = document.querySelector("header h1");
@@ -443,7 +471,7 @@ document.title = originalTitle;
         <!-- Links introduction -->
         <p class="intro-links">Here, you'll find my links: YouTube, Spotify, Discord Server</p>
         <!-- Username -->
-        <p class="username" id="username" onclick="copyUsername()">@nem_nuong.</p>
+       <p class="username" id="username" onclick="copyUsername()">@nem_nuong.</p>
 <audio id="background-music" src="nhacnen.mp4" loop></audio>
     </div>
 </header>
