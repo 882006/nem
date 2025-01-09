@@ -495,11 +495,40 @@ document.title = originalTitle;
     <div class="content-container">
         <!-- Welcome message -->
        <p class="welcome-message">
-    <span class="heart">❤</span>
-<span class="dots">
-    <span>.</span><span>.</span><span>.</span>
-</span>
-        </p>
+    <span class="dynamic-text"></span>
+</p>
+
+<script>
+    const message = "❤ Welcome to Nem Profile ❤"; // Thông điệp hiển thị
+    const textContainer = document.querySelector(".dynamic-text");
+    let index = 0;
+    let isReversing = false;
+
+    function animateText() {
+        if (!isReversing && index <= message.length) {
+            // Khi đang tiến lên
+            textContainer.textContent = message.slice(0, index);
+            index++;
+        } else if (isReversing && index >= 0) {
+            // Khi đang thu hồi
+            textContainer.textContent = message.slice(0, index);
+            index--;
+        }
+
+        // Đổi trạng thái khi đạt giới hạn
+        if (index > message.length) {
+            isReversing = true;
+            setTimeout(() => index--, 1000); // Tạm dừng trước khi thu hồi
+        } else if (index < 0) {
+            isReversing = false;
+            setTimeout(() => index++, 1000); // Tạm dừng trước khi bắt đầu lại
+        }
+
+        setTimeout(animateText, 100); // Điều chỉnh thời gian giữa các ký tự
+    }
+
+    animateText();
+</script>
         
         <!-- Avatar -->
         <img src="images/chosocoolface.jpg" alt="Profile Picture">
