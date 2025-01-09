@@ -496,19 +496,20 @@ document.title = originalTitle;
      
   </script>
  <header>
+     
     <h1><a href="#"></a></h1>
-     <div style="text-align: center; margin-top: 10px;">
-</div>
-    
+    <div style="text-align: center; margin-top: 10px;">
+        <p class="welcome-message">
+            <span class="dynamic-text"></span>
+        </p>
+    </div>
+
     <div class="content-container">
         <!-- Welcome message -->
-    <p <span class="dynamic-text"></span></p>
+        <p><span class="dynamic-text"></span></p>
     </div>
 
 <script>
-<p class="welcome-message">
-    <span class="dynamic-text"></span>
-</p>
     const message = "❤ Welcome to Nem Profile ❤"; // Thông điệp hiển thị
     const textContainer = document.querySelector(".dynamic-text");
     let index = 0;
@@ -539,7 +540,7 @@ document.title = originalTitle;
 
     animateText();
 </script>
-        
+     <div>
         <!-- Avatar -->
         <img src="images/chosocoolface.jpg" alt="Profile Picture">
         <!-- Links introduction -->
