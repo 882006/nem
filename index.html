@@ -369,6 +369,16 @@ header img {
                 align-items: center;
             }
         }
+        .background-video {
+    position: fixed; /* Gắn video cố định ở vị trí */
+    top: 0;
+    left: 0;
+    width: 100%; /* Video phủ hết chiều ngang */
+    height: 100%; /* Video phủ hết chiều cao */
+    object-fit: cover; /* Làm cho video không bị méo, cắt phần thừa */
+    z-index: -1; /* Đặt video ở phía sau tất cả các phần tử khác */
+}
+
     </style>
 </head>
 <body>
@@ -397,11 +407,12 @@ header img {
 </script>
 
     <!-- Video nền -->
-<video class="background-video" autoplay loop muted playsinline>
-    <source src="video/the lost soul down x lost soul [jujutsu kaisen man] credits_snauzk.mp4" type="video/mp4">
-    Trình duyệt của bạn không hỗ trợ video nền.
-</video>
-phần này để ở đâu trong hmlt
+    <video class="background-video" autoplay loop muted playsinline>
+        <source src="video/the lost soul down x lost soul [jujutsu kaisen man] credits_snauzk.mp4" type="video/mp4">
+        Trình duyệt của bạn không hỗ trợ video nền.
+    </video>
+    <!-- Các phần tử khác của trang web -->
+    <!-- Ví dụ như ảnh đại diện, các liên kết, phần nội dung chính -->
 <script>
     // Tăng âm lượng video lên 150%
     const video = document.querySelector('.background-video');
@@ -440,22 +451,22 @@ phần này để ở đâu trong hmlt
 </script>
  </header>
 
-    <section>
-        <p style="font-size: 20px;">Here, you'll find my links: YouTube, Spotify, Discord Server</p>
-        <h2 style="text-align: center; margin-top: 20px;">Connect with Me</h2>
-        <p style="text-align: center;">Follow me on:</p>
-        <div class="icon-container">
-            <a href="https://www.youtube.com/@nem_nuong." target="_blank">
-                <img src="images/Youtube.png" alt="YouTube Icon"> YouTube
-            </a>
-            <a href="https://open.spotify.com/user/31njaguxvody6xit6gajvngzhhe4?si=55bdc1bfb41c4cf0" target="_blank">
-                <img src="images/Spotify.png" alt="Spotify Icon"> Spotify
-            </a>
-            <a href="https://discord.gg/2zrethSUr9" target="_blank">
-                <img src="images/discord.jpg" alt="Discord Icon"> Discord Server
-            </a>
-        </div>
-    </section>
+    <section class="links-section">
+    <p style="font-size: 20px;">Here, you'll find my links: YouTube, Spotify, Discord Server</p>
+    <h2>Connect with Me</h2>
+    <p>Follow me on:</p>
+    <div class="icon-container">
+        <a href="https://www.youtube.com/@nem_nuong." target="_blank">
+            <img src="images/Youtube.png" alt="YouTube Icon"> YouTube
+        </a>
+        <a href="https://open.spotify.com/user/31njaguxvody6xit6gajvngzhhe4?si=55bdc1bfb41c4cf0" target="_blank">
+            <img src="images/Spotify.png" alt="Spotify Icon"> Spotify
+        </a>
+        <a href="https://discord.gg/2zrethSUr9" target="_blank">
+            <img src="images/discord.jpg" alt="Discord Icon"> Discord Server
+        </a>
+    </div>
+</section>
 
     <section>
         <h2 style="text-align: center; margin-top: 20px;">My Favorite Playlists</h2>
