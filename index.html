@@ -170,13 +170,6 @@ header img {
             font-size: 16px;
         }
 
-        .icon-container {
-            display: flex;
-            justify-content: center;
-            gap: 2cm;
-            margin-top: 20px;
-        }
-
         .icon-container a {
             text-decoration: none;
             color: white;
@@ -379,6 +372,17 @@ header img {
     z-index: -1;
     opacity: 0.8;
 }
+        .links-section p, .links-section h2 {
+    text-align: center; /* Center only the text */
+}
+
+.icon-container {
+    display: flex;
+    justify-content: center; /* Icons stay aligned */
+    gap: 2cm;
+    margin-top: 20px;
+    flex-wrap: wrap; /* Allow icons to wrap in smaller screens */
+}
 
     </style>
 </head>
@@ -452,10 +456,10 @@ header img {
 </script>
  </header>
 
-    <section class="links-section">
-    <p style="font-size: 20px;">Here, you'll find my links: YouTube, Spotify, Discord Server</p>
-    <h2>Connect with Me</h2>
-    <p>Follow me on:</p>
+   <section class="links-section">
+    <p style="font-size: 20px; text-align: center;">Here, you'll find my links: YouTube, Spotify, Discord Server</p>
+    <h2 style="text-align: center;">Connect with Me</h2>
+    <p style="text-align: center;">Follow me on:</p>
     <div class="icon-container">
         <a href="https://www.youtube.com/@nemnuong" target="_blank">
             <img src="images/Youtube.png" alt="YouTube Icon"> YouTube
