@@ -422,5 +422,18 @@
         localStorage.setItem('view-count', viewCount);
         document.getElementById('view-count').textContent = viewCount;
     </script>
+    
+    <!-- Video nền -->
+<video class="background-video" autoplay loop muted playsinline>
+    <source src="video/the lost soul down x lost soul [jujutsu kaisen man] credits_snauzk.mp4" type="video/mp4">
+    Trình duyệt của bạn không hỗ trợ video nền.
+</video>
+
+<script>
+    // Tăng âm lượng video lên 150%
+    const video = document.querySelector('.background-video');
+    video.volume = 1.5; // Tăng âm lượng lên 150%
+</script>
+
 </body>
 </html>
