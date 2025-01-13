@@ -251,6 +251,17 @@ header img:hover {
     box-shadow: 0 10px 20px rgba(255, 255, 255, 0.5);
 }
 
+/* Video nền */
+.background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* Đặt video phía sau các nội dung khác */
+}
+
 /project-folder
 ├── index.html
 ├── video/
