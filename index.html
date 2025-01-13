@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About me</title>
+    <title>Nem🎵⭐</title> <!-- Tiêu đề tĩnh ban đầu -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         /* Thêm custom scrollbar */
@@ -90,52 +90,80 @@
             }
         }
 
-        header {
-            text-align: center;
-            padding: 20px;
-            background-color: #000000;
-            position: relative;
-        }
-
         .welcome-message {
             font-size: 26px;
             font-weight: bold;
             margin-top: 1cm; /* 1cm distance from top */
             display: inline-block;
         }
+        
+       header {
+    display: flex; /* Đặt chế độ flex */
+    flex-direction: column; /* Sắp xếp các phần tử theo chiều dọc */
+    align-items: center; /* Căn giữa theo chiều ngang */
+    justify-content: center; /* Căn giữa theo chiều dọc */
+    height: 100vh; /* Chiều cao của header chiếm toàn màn hình */
+    background-color: #000; /* Màu nền */
+    padding: 0; /* Loại bỏ khoảng cách thừa */
+    margin: 0; /* Loại bỏ khoảng cách thừa */
+}
 
-        header img {
-            border-radius: 50%;
-            margin-top: 1cm; /* Increased margin-top */
-            width: 8.5cm; /* Increased size */
-            height: 8.5cm; /* Increased size */
-            object-fit: cover;
-            transition: opacity 0.3s ease, border 0.3s ease;
-            border: 5px solid white; /* Increased border thickness */
-            padding: 1cm;
-            box-sizing: border-box;
-            box-shadow: 0 0 20px white; /* Increased glowing effect */
-        }
+header img {
+    border-radius: 50%; /* Bo tròn ảnh */
+    width: 8.5cm; /* Kích thước ảnh */
+    height: 8.5cm; 
+    object-fit: cover; /* Đảm bảo không méo ảnh */
+    border: 5px solid white; /* Viền trắng cho ảnh */
+    padding: 1cm;
+    box-sizing: border-box;
+    box-shadow: 0 0 20px white; /* Hiệu ứng ánh sáng */
+    margin-bottom: 20px; /* Khoảng cách giữa ảnh và chữ */
+}
 
-        header img:active {
-            opacity: 0.5;
-            border: 8mm solid white;
-        }
+.username {
+    font-size: 40px; /* Kích thước chữ */
+    font-weight: bold;
+    background-color: rgba(128, 128, 128, 0.5); /* Màu nền mờ */
+    padding: 10px 20px; /* Khoảng cách bên trong chữ */
+    border-radius: 15px; /* Bo góc chữ nhật */
+    cursor: pointer; /* Hiển thị con trỏ dạng click */
+    transition: all 0.3s ease; /* Hiệu ứng mượt */
+    text-align: center; /* Căn giữa chữ */
+    display: inline-block;
+}
 
-        header h1 {
-            margin-top: 15px;
-            font-size: 28px;
-        }
+/* Hiệu ứng cho chữ khi hover và click */
+.username:hover {
+    opacity: 0.7; /* Giảm độ sáng khi hover */
+    background-color: rgba(255, 255, 255, 0.7); /* Nền sáng hơn */
+}
 
-        .username {
-            margin-top: 20px;
-            font-size: 40px; /* Increased font size */
-            font-weight: bold;
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%); /* Đặt giữa */
-            top: 10.5cm; /* Di chuyển xuống dưới avatar */
-        }
+.username:active {
+    background-color: rgba(255, 255, 255, 1); /* Nền sáng hoàn toàn */
+    transform: scale(0.95); /* Nhấn xuống một chút */
+}
+
+/* Để chữ tự động sao chép khi click */
+.username:active::after {
+    content: "Sao chép!"; /* Hiển thị thông báo */
+    font-size: 16px;
+    display: block;
+    margin-top: 10px;
+    color: #00ff00; /* Màu xanh lục */
+}
+
+/* Thông báo tạm thời */
+.username:active + .copy-notice {
+    display: block;
+}
+
+/* Ẩn thông báo sau khi sao chép */
+.copy-notice {
+    display: none;
+    font-size: 14px;
+    color: #fff;
+    margin-top: 10px;
+}
 
         header p {
             margin-top: 5px;
@@ -344,22 +372,80 @@
     </style>
 </head>
 <body>
+    
+    <script>
+    const title = "Nem🎵⭐"; // Nội dung tiêu đề
+    const intervalTime = 1500; // Thời gian lặp (1.5 giây)
+    let currentIndex = 0; // Vị trí hiện tại trong chuỗi
+    let isRemoving = false; // Trạng thái xóa chữ
+
+    function animateTitle() {
+        let displayText = title.substring(0, currentIndex);
+
+        if (!isRemoving) {
+            currentIndex++; // Thêm ký tự
+            if (currentIndex > title.length) isRemoving = true; // Khi hoàn tất, bắt đầu xóa
+        } else {
+            currentIndex--; // Xóa ký tự
+            if (currentIndex < 0) isRemoving = false; // Khi xóa hết, bắt đầu thêm
+        }
+
+        document.title = displayText; // Cập nhật tiêu đề
+    }
+
+    setInterval(animateTitle, intervalTime / (title.length * 2)); // Chạy hiệu ứng
+</script>
+
+    <!-- Video nền -->
+<video class="background-video" autoplay loop muted playsinline>
+    <source src="video/the lost soul down x lost soul [jujutsu kaisen man] credits_snauzk.mp4" type="video/mp4">
+    Trình duyệt của bạn không hỗ trợ video nền.
+</video>
+phần này để ở đâu trong hmlt
+<script>
+    // Tăng âm lượng video lên 150%
+    const video = document.querySelector('.background-video');
+    video.volume = 1.5; // Tăng âm lượng lên 150%
+</script>
+    
     <header>
         <div class="about-me-icons">
             <i class="fa-solid fa-heart heart"></i>
             <span class="dots">...</span>
         </div>
-        <p class="welcome-message">Welcome to Nem Profile</p>
-        <img src="images/chosocoolface.jpg" alt="Profile Picture">
-        <p class="username">Nem</p>
-        <p style="font-size: 20px;">Here, you'll find my links: YouTube, Spotify, Discord Server</p>
-    </header>
+         <img src="images/chosocoolface.jpg" alt="Profile Picture">
+    <p class="username">@nem_nuong</p>
+    <span class="copy-notice">Đã sao chép!</span>
+
+        <script>
+    // Tìm phần tử username
+    const usernameElement = document.getElementById('username');
+
+    // Thêm sự kiện click để sao chép
+    usernameElement.addEventListener('click', () => {
+        // Tạo một vùng chọn tạm thời
+        const tempInput = document.createElement('textarea');
+        tempInput.value = usernameElement.textContent;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        document.execCommand('copy');
+        document.body.removeChild(tempInput);
+
+        // Hiệu ứng khi sao chép
+        usernameElement.textContent = 'Copied!';
+        setTimeout(() => {
+            usernameElement.textContent = '@nem_nuong';
+        }, 1000); // Quay lại nội dung ban đầu sau 1 giây
+    });
+</script>
+ </header>
 
     <section>
+        <p style="font-size: 20px;">Here, you'll find my links: YouTube, Spotify, Discord Server</p>
         <h2 style="text-align: center; margin-top: 20px;">Connect with Me</h2>
         <p style="text-align: center;">Follow me on:</p>
         <div class="icon-container">
-            <a href="https://www.youtube.com/@nemnuong" target="_blank">
+            <a href="https://www.youtube.com/@nem_nuong." target="_blank">
                 <img src="images/Youtube.png" alt="YouTube Icon"> YouTube
             </a>
             <a href="https://open.spotify.com/user/31njaguxvody6xit6gajvngzhhe4?si=55bdc1bfb41c4cf0" target="_blank">
@@ -422,18 +508,6 @@
         localStorage.setItem('view-count', viewCount);
         document.getElementById('view-count').textContent = viewCount;
     </script>
-    
-    <!-- Video nền -->
-<video class="background-video" autoplay loop muted playsinline>
-    <source src="video/the lost soul down x lost soul [jujutsu kaisen man] credits_snauzk.mp4" type="video/mp4">
-    Trình duyệt của bạn không hỗ trợ video nền.
-</video>
-
-<script>
-    // Tăng âm lượng video lên 150%
-    const video = document.querySelector('.background-video');
-    video.volume = 1.5; // Tăng âm lượng lên 150%
-</script>
 
 </body>
 </html>
