@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Hiệu Ứng Animation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f0c29, #2a0845);
+            color: #ffffff;
+            min-height: 100vh;
+            overflow-x: hidden;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 20px 0 40px;
+            color: #8a5cf6;
+            text-shadow: 0 0 10px rgba(138, 92, 246, 0.5);
+        }
+
+        .animation-section {
+            background: rgba(30, 26, 46, 0.4);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 15px rgba(138, 92, 246, 0.3);
+        }
+
+        h2 {
+            color: #8a5cf6;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        h2 i {
+            margin-right: 10px;
+        }
+
+        .demo-area {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            padding: 20px;
+            background: rgba(40, 40, 62, 0.3);
+            border-radius: 10px;
+            min-height: 150px;
+        }
+
+        /* 1. Hiệu ứng phần tử nền */
+        .animated-bg-elements {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            border: 1px dashed rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .floating-particle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(138, 92, 246, 0.15);
+            animation: float 15s infinite linear;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) translateX(0);
+                opacity: 0;
+            }
+            50% {
+                opacity: 0.5;
+            }
+            100% {
+                transform: translateY(-100px) translateX(100px);
+                opacity: 0;
+            }
+        }
+
+        /* 2. Hiệu ứng hiện ra khi cuộn */
+        .scroll-item {
+            width: 100px;
+            height: 100px;
+            background: rgba(138, 92, 246, 0.2);
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+            border: 1px solid rgba(138, 92, 246, 0.3);
+        }
+
+        .scroll-demo:hover .scroll-item {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* 3. Hiệu ứng icon mạng xã hội */
+        .social-demo {
+            display: flex;
+            gap: 20px;
+        }
+
+        .social-icon-demo {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .social-icon-demo::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 5px;
+            height: 5px;
+            background: rgba(255, 255, 255, 0.5);
+            opacity: 0;
+            border-radius: 100%;
+            transform: scale(1, 1) translate(-50%);
+            transform-origin: 50% 50%;
+        }
+
+        .social-icon-demo:hover::after {
+            animation: ripple 1s ease-out;
+        }
+
+        @keyframes ripple {
+            0% {
+                transform: scale(0, 0);
+                opacity: 1;
+            }
+            20% {
+                transform: scale(20, 20);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(50, 50);
+                opacity: 0;
+            }
+        }
+
+        .social-icon-demo:hover {
+            transform: translateY(-5px);
+        }
+
+        .youtube-demo { background: rgba(255, 0, 0, 0.1); border-color: rgba(255, 0, 0, 0.3); }
+        .spotify-demo { background: rgba(29, 185, 84, 0.1); border-color: rgba(29, 185, 84, 0.3); }
+        .discord-demo { background: rgba(114, 137, 218, 0.1); border-color: rgba(114, 137, 218, 0.3); }
+
+        /* 4. Hiệu ứng gõ chữ */
+        .typing-demo {
+            overflow: hidden;
+            border-right: 2px solid rgba(255, 255, 255, 0.75);
+            white-space: nowrap;
+            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+            font-size: 1.2rem;
+            display: inline-block;
+            padding: 10px;
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: rgba(255, 255, 255, 0.75) }
+        }
+
+        /* 5. Hiệu ứng parallax */
+        .parallax-demo {
+            width: 100%;
+            height: 150px;
+            position: relative;
+            perspective: 100px;
+            border: 1px dashed rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .parallax-item {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background: rgba(138, 92, 246, 0.3);
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.3s ease-out;
+            border: 1px solid rgba(138, 92, 246, 0.5);
+        }
+
+        .parallax-demo:hover .parallax-item {
+            transform: translateZ(10px);
+        }
+
+        /* 6. Hiệu ứng viền sáng */
+        .glow-demo {
+            width: 150px;
+            height: 80px;
+            background: rgba(30, 30, 46, 0.7);
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: border-glow 3s infinite;
+            border: 1px solid rgba(138, 92, 246, 0.3);
+        }
+
+        @keyframes border-glow {
+            0% {
+                box-shadow: 0 0 5px rgba(138, 92, 246, 0.5);
+            }
+            50% {
+                box-shadow: 0 0 20px rgba(138, 92, 246, 0.8);
+            }
+            100% {
+                box-shadow: 0 0 5px rgba(138, 92, 246, 0.5);
+            }
+        }
+
+        /* 7. Hiệu ứng con trỏ */
+        .cursor-demo {
+            width: 100%;
+            height: 150px;
+            border: 1px dashed rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+            cursor: none;
+        }
+
+        .cursor-trail-demo {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+        }
+
+        /* 8. Hiệu ứng tải trang */
+        .load-sequence-demo {
+            display: flex;
+            gap: 15px;
+        }
+
+        .sequence-item {
+            width: 70px;
+            height: 70px;
+            background: rgba(138, 92, 246, 0.2);
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            opacity: 0;
+            transform: translateY(20px);
+            border: 1px solid rgba(138, 92, 246, 0.3);
+        }
+
+        .load-demo:hover .sequence-item {
+            animation: fadeInUp 0.5s forwards;
+        }
+
+        .load-demo:hover .sequence-item:nth-child(1) { animation-delay: 0.1s; }
+        .load-demo:hover .sequence-item:nth-child(2) { animation-delay: 0.2s; }
+        .load-demo:hover .sequence-item:nth-child(3) { animation-delay: 0.3s; }
+        .load-demo:hover .sequence-item:nth-child(4) { animation-delay: 0.4s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .description {
+            margin-top: 15px;
+            color: #b0b0c0;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .try-button {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 15px;
+            background: rgba(138, 92, 246, 0.3);
+            border: 1px solid rgba(138, 92, 246, 0.5);
+            border-radius: 20px;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.8rem;
+        }
+
+        .try-button:hover {
+            background: rgba(138, 92, 246, 0.5);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Demo Hiệu Ứng Animation Cho Trang Cá Nhân</h1>
+        
+        <!-- 1. Hiệu ứng phần tử nền -->
+        <div class="animation-section">
+            <h2><i class="fas fa-layer-group"></i> Phần tử nền trôi nổi</h2>
+            <div class="demo-area">
+                <div class="animated-bg-elements" id="bgElements">
+                    <!-- Các phần tử sẽ được thêm bằng JS -->
+                </div>
+            </div>
+            <p class="description">Các hạt và hình dạng trôi nổi nhẹ nhàng trong nền tạo chiều sâu và sự sinh động cho trang.</p>
+            <button class="try-button" onclick="initBackgroundElements()">Thử lại</button>
+        </div>
+        
+        <!-- 2. Hiệu ứng hiện ra khi cuộn -->
+        <div class="animation-section">
+            <h2><i class="fas fa-scroll"></i> Hiệu ứng xuất hiện khi cuộn</h2>
+            <div class="demo-area scroll-demo">
+                <div class="scroll-item">Item 1</div>
+                <div class="scroll-item">Item 2</div>
+                <div class="scroll-item">Item 3</div>
+            </div>
+            <p class="description">Các phần tử sẽ xuất hiện mượt mà khi bạn di chuột qua (trong demo này) hoặc khi cuộn đến vị trí của chúng.</p>
+            <button class="try-button" onclick="resetScrollItems()">Thử lại</button>
+        </div>
+        
+        <!-- 3. Hiệu ứng icon mạng xã hội -->
+        <div class="animation-section">
+            <h2><i class="fas fa-share-alt"></i> Hiệu ứng icon mạng xã hội</h2>
+            <div class="demo-area">
+                <div class="social-demo">
+                    <div class="social-icon-demo youtube-demo">
+                        <i class="fab fa-youtube"></i>
+                    </div>
+                    <div class="social-icon-demo spotify-demo">
+                        <i class="fab fa-spotify"></i>
+                    </div>
+                    <div class="social-icon-demo discord-demo">
+                        <i class="fab fa-discord"></i>
+                    </div>
+                </div>
+            </div>
+            <p class="description">Hiệu ứng gợn sóng lan tỏa khi di chuột qua các biểu tượng mạng xã hội, tạo cảm giác tương tác sống động.</p>
+        </div>
+        
+        <!-- 4. Hiệu ứng gõ chữ -->
+        <div class="animation-section">
+            <h2><i class="fas fa-keyboard"></i> Hiệu ứng gõ chữ</h2>
+            <div class="demo-area">
+                <div class="typing-demo">Chào mừng đến với trang cá nhân của tôi!</div>
+            </div>
+            <p class="description">Hiệu ứng máy đánh chữ cổ điển, hoàn hảo để giới thiệu bản thân một cách ấn tượng.</p>
+            <button class="try-button" onclick="resetTyping()">Thử lại</button>
+        </div>
+        
+        <!-- 5. Hiệu ứng parallax -->
+        <div class="animation-section">
+            <h2><i class="fas fa-cubes"></i> Hiệu ứng Parallax</h2>
+            <div class="demo-area">
+                <div class="parallax-demo">
+                    <div class="parallax-item">Nổi lên</div>
+                </div>
+            </div>
+            <p class="description">Hiệu ứng chiều sâu 3D khi di chuột qua, tạo cảm giác các phần tử tiến lên phía trước.</p>
+            <button class="try-button" onclick="resetParallax()">Thử lại</button>
+        </div>
+        
+        <!-- 6. Hiệu ứng viền sáng -->
+        <div class="animation-section">
+            <h2><i class="fas fa-lightbulb"></i> Hiệu ứng viền sáng</h2>
+            <div class="demo-area">
+                <div class="glow-demo">Viền sáng</div>
+            </div>
+            <p class="description">Viền sáng nhấp nháy xung quanh các phần tử quan trọng, thu hút sự chú ý một cách tinh tế.</p>
+        </div>
+        
+        <!-- 7. Hiệu ứng con trỏ -->
+        <div class="animation-section">
+            <h2><i class="fas fa-mouse-pointer"></i> Hiệu ứng con trỏ đuổi theo</h2>
+            <div class="demo-area">
+                <div class="cursor-demo" id="cursorDemo">
+                    Di chuột vào đây để xem hiệu ứng
+                </div>
+            </div>
+            <p class="description">Các hạt sáng sẽ đuổi theo con trỏ chuột của bạn, tạo trải nghiệm tương tác thú vị.</p>
+        </div>
+        
+        <!-- 8. Hiệu ứng tải trang -->
+        <div class="animation-section">
+            <h2><i class="fas fa-spinner"></i> Hiệu ứng tải trang theo trình tự</h2>
+            <div class="demo-area">
+                <div class="load-sequence-demo load-demo">
+                    <div class="sequence-item"><i class="fas fa-user"></i></div>
+                    <div class="sequence-item"><i class="fas fa-heart"></i></div>
+                    <div class="sequence-item"><i class="fas fa-music"></i></div>
+                    <div class="sequence-item"><i class="fas fa-star"></i></div>
+                </div>
+            </div>
+            <p class="description">Các phần tử xuất hiện lần lượt với hiệu ứng mờ dần và trồi lên, tạo cảm giác trang được tải một cách có trật tự.</p>
+            <button class="try-button" onclick="resetSequence()">Thử lại</button>
+        </div>
+    </div>
+
+    <script>
+        // 1. Khởi tạo phần tử nền
+        function initBackgroundElements() {
+            const container = document.getElementById('bgElements');
+            container.innerHTML = '';
+            
+            for (let i = 0; i < 15; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('floating-particle');
+                
+                // Kích thước ngẫu nhiên
+                const size = 5 + Math.random() * 20;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                
+                // Vị trí ngẫu nhiên
+                const posX = Math.random() * 100;
+                const posY = Math.random() * 100;
+                particle.style.left = `${posX}%`;
+                particle.style.top = `${posY}%`;
+                
+                // Thời gian animation ngẫu nhiên
+                const duration = 10 + Math.random() * 20;
+                particle.style.animationDuration = `${duration}s`;
+                
+                // Độ trễ ngẫu nhiên
+                const delay = Math.random() * 5;
+                particle.style.animationDelay = `-${delay}s`;
+                
+                container.appendChild(particle);
+            }
+        }
+        
+        // 2. Đặt lại các mục cuộn
+        function resetScrollItems() {
+            const items = document.querySelectorAll('.scroll-item');
+            items.forEach(item => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(20px)';
+                
+                // Kích hoạt lại hiệu ứng
+                setTimeout(() => {
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateY(0)';
+                }, 100);
+            });
+        }
+        
+        // 4. Đặt lại hiệu ứng gõ chữ
+        function resetTyping() {
+            const typing = document.querySelector('.typing-demo');
+            typing.style.animation = 'none';
+            
+            setTimeout(() => {
+                typing.style.animation = 'typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite';
+            }, 10);
+        }
+        
+        // 5. Đặt lại hiệu ứng parallax
+        function resetParallax() {
+            const item = document.querySelector('.parallax-item');
+            item.style.transform = 'translateZ(0)';
+            
+            setTimeout(() => {
+                item.style.transform = '';
+            }, 10);
+        }
+        
+        // 7. Thiết lập hiệu ứng con trỏ
+        function setupCursorEffect() {
+            const cursorDemo = document.getElementById('cursorDemo');
+            let trails = [];
+            
+            cursorDemo.addEventListener('mousemove', function(e) {
+                const trail = document.createElement('div');
+                trail.classList.add('cursor-trail-demo');
+                
+                // Vị trí
+                trail.style.left = `${e.offsetX}px`;
+                trail.style.top = `${e.offsetY}px`;
+                
+                // Kích thước ngẫu nhiên
+                const size = 5 + Math.random() * 10;
+                trail.style.width = `${size}px`;
+                trail.style.height = `${size}px`;
+                
+                // Màu sắc ngẫu nhiên
+                const colors = ['rgba(255,255,255,0.3)', 'rgba(138,92,246,0.3)', 'rgba(100,200,255,0.3)'];
+                const randomColor = colors[Math.floor(Math.random() * colors.length)];
+                trail.style.background = randomColor;
+                
+                cursorDemo.appendChild(trail);
+                trails.push(trail);
+                
+                // Tự động xóa sau 1 giây
+                setTimeout(() => {
+                    if (trail.parentNode) {
+                        trail.parentNode.removeChild(trail);
+                    }
+                    trails = trails.filter(t => t !== trail);
+                }, 1000);
+            });
+            
+            cursorDemo.addEventListener('mouseleave', function() {
+                trails.forEach(trail => {
+                    if (trail.parentNode) {
+                        trail.parentNode.removeChild(trail);
+                    }
+                });
+                trails = [];
+            });
+        }
+        
+        // 8. Đặt lại trình tự tải
+        function resetSequence() {
+            const items = document.querySelectorAll('.sequence-item');
+            items.forEach(item => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(20px)';
+                item.style.animation = 'none';
+            });
+            
+            // Kích hoạt lại hiệu ứng
+            setTimeout(() => {
+                items.forEach((item, index) => {
+                    setTimeout(() => {
+                        item.style.animation = `fadeInUp 0.5s forwards`;
+                    }, index * 100);
+                });
+            }, 10);
+        }
+        
+        // Khởi tạo khi trang tải
+        window.onload = function() {
+            initBackgroundElements();
+            setupCursorEffect();
+        };
+    </script>
+</body>
+</html>
